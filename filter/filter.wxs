@@ -70,45 +70,12 @@ var roleStatus = function (value) {
   return typeT[value] || '未知'
 }
 
-//设备巡查频率
-var patrolFrequency = function (value) {
-  if (!value) {
-    return '--'
-  }
-  var types = {
-    '0/0/0': '不需要',
-    '2/0/1': '每周1次',
-    '3/0/1': '每季度1次',
-    '4/0/1': '半月1次',
-    '5/0/1': '每月1次',
-    '6/0/1': '每半年1次',
-    '7/0/1': '每年1次'
-  }
-  for (var i = 0; i < 3; i++) {
-    var key = '1/1/' + (i + 1);
-    types[key] = '每日' + (i + 1) + '次';
-  }
-  for (var i = 1; i < 6; i++) {
-    var key = '1/' + (i + 1) + '/1';
-    types[key] = (i + 1) + '天1次'
-  }
-  return types[value] || '未知频率'
-}
 
-var riskStatus = function (value) {
-  var typeT = {
-    '1': '未处置',
-    '2': '处置中',
-    '3': '已处置'
-  }
-  return typeT[value + ''] || '未知'
-}
+
 
 module.exports = {
   dateFormat: dateFormat,
   patrolStatus: patrolStatus,
   roleStatus: roleStatus,
-  patrolFrequency: patrolFrequency,
-  riskStatus: riskStatus,
   tsskStatus: tsskStatus
 }
