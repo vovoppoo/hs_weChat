@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "客户详情",
+  "usingComponents": {
+    "com-navbar": "../../../components/com-navbar/index"
+  }
+}

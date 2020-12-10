@@ -1,0 +1,106 @@
+<com-input-model show-view="{{showMenu}}" title="{{inputTitle}}" bind:buttonhandle="buttonhandle" menu-arr="{{menuArr}}"
+	wx:key="index"></com-input-model>
+
+<view class="menu-view">
+	<view wx:if="{{floorstatus}}" class="top-button" bindtap="goTopFn">
+		↑
+	</view>
+	<block wx:for="{{dataList}}" wx:key="index">
+		<view class="menu-item-row">
+			<view class="menu-row title-back" data-index="{{index}}" bindtap="showViewFn">
+				<view class="label ">
+					{{item.title}}
+				</view>
+				<view class="title-back-icon" style="top: 20rpx;left: 18rpx; z-index: 1;"></view>
+				<view class="button">
+					<view class="down" wx:if="{{item.show}}">
+						<image src="/style/images/nav-b.png"></image>
+					</view>
+					<view class="up" wx:else="">
+						<image src="/style/images/nav-b.png"></image>
+					</view>
+				</view>
+			</view>
+			<view class="menu-con" wx:if="{{item.show}}">
+
+				<block wx:for="{{item.menuList}}" wx:for-index="menuItemIndex"  wx:for-item="menuItem" wx:key="menuItemIndex">
+					<view bindtap="showNodeFn" class="menu-con-row">
+						<view class="label" data-index="{{menuItemIndex}}" data-id="{{menuItem.id}}" data-indexType="{{item.type}}"
+							catchtap="showNoedFn">
+							<view>{{menuItem.moduleName}}</view>
+							<view wx:if="{{menuItem.showNode}}">
+								<image src="/style/iconfont/jiantou.png"></image>
+							</view>
+							<view wx:else class="up">
+								<image src="/style/iconfont/jiantou.png"></image>
+							</view>
+						</view>
+						<view class="button">
+							<view wx:if="{{hsType==='1'}}" data-hsType="{{hsType}}" class="add-node-button edit"
+								data-index="{{menuItemIndex}}" data-id="{{menuItem.id}}" data-name="{{menuItem.moduleName}}"
+								data-indexType="{{item.type}}" catchtap="showMenuFn">
+								<image src="/style/iconfont/edit.png"></image>
+							</view>
+							<view wx:if="{{hsType==='1'}}" class="add-node-button" data-hsType="{{hsType}}" data-index="{{menuItemIndex}}"
+								data-id="{{menuItem.id}}" data-type="{{menuItem.moduleType}}" data-indexType="{{item.type}}"
+								catchtap="goAddNodeFn">
+								<image src="/style/iconfont/add-icon-hs.png"></image>
+							</view>
+						</view>
+					</view>
+					<view wx:if="{{menuItem.showNode}}" class="node-view">
+						<block wx:if="{{menuItem.nodeArr.length>0}}">
+							<view wx:for="{{menuItem.nodeArr}}" catchtap="goNodeInfoFn" data-nodeId="{{nodeItem.id}}"
+								data-id="{{menuItem.id}}" data-type="{{menuItem.moduleType}}" data-hsType="{{hsType}}"
+								data-index="{{menuItemIndex}}" data-indexType="{{item.type}}" wx:key="index" wx:for-item="nodeItem"
+								class="node-row">
+								{{nodeItem.nodeName}}
+							</view>
+						</block>
+						<block wx:else>
+							<view class="node-row" style="text-align: center;">
+								暂无节点~
+							</view>
+						</block>
+
+					</view>
+
+				</block>
+				<block wx:if="{{item.addShow}}">
+					<view wx:if="{{hsType==='1'}}" class="menu-con-add-button" data-index="{{index}}" catchtap="showMenuFn">
+						<view class="icon-add"> + </view> 点击添加子流程
+					</view>
+				</block>
+				<block wx:else>
+					<view class="menu-con-add-button input">
+						<!-- <view class="input-inp">
+							<input maxlength="20" data-name="procedureName" maxlength="20" bindblur="bindInputChange"
+								placeholder="子流程名字" />
+						</view> -->
+						<view class="input-button">
+							<view data-index="{{index}}" catchtap="submitDataFn">
+								<image src="/style/iconfont/default-round-success-icon.png"></image>
+							</view>
+							<view data-index="{{index}}" catchtap="cloAddNodeFn">
+								<image src="/style/iconfont/default-round-error-icon.png"></image>
+							</view>
+						</view>
+					</view>
+				</block>
+
+			</view>
+
+		</view>
+
+	</block>
+	<view wx:if="{{infoData.auditStatus!==4 && infoData.auditStatus}}" class="bottom-add-row">
+		<view wx:if="{{hsType==1}}" class="add-button" bindtap="goExamineFn">
+			提交审核
+		</view>
+	</view>
+	<view wx:if="{{hsType==2}}" class="bottom-add-row">
+		<view class="add-button" bindtap="goAddModelFn">
+			加入到我的模板
+		</view>
+	</view>
+</view>

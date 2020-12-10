@@ -1,0 +1,293 @@
+<!-- <view class="title-row">
+	节点信息
+</view> -->
+<view class="input-row">
+	<view class="label">
+		<view class="red-icon">*</view>
+		节点名称
+	</view>
+	<view class="input-item">
+		<input disabled="{{hstype==='2'}}" class="weui-input" data-name="name" value="{{name}}" maxlength="20"
+			bindblur="bindInputChange" placeholder="节点名称" />
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view class="red-icon">*</view>
+		主话术内容
+	</view>
+	<view class="input-item">
+		<textarea disabled="{{hstype==='2'}}" class="weui-input" bindblur="bindInputChange" value="{{audioContent}}"
+			data-name="audioContent" maxlength="500" placeholder="话术内容" />
+		</view>
+	<view class="input-item ">
+		<block wx:if="{{hstype==='1'}}">
+			<view wx:if="{{!showAudioStop}}" class="button lu" bindtap="selectAudonFn">
+				<image src="/style/iconfont/audio-ico.png"></image> 点击开始录音
+			</view>
+			<view wx:else class="button lu" bindtap="stopAudioFn">
+				<view class="spend" wx:if="{{stateText==='录音中'}}">
+					<image src="/style/iconfont/suspend.png"></image>
+				</view>
+				{{buttonText}}({{stateText}})
+			</view>
+		</block>
+
+
+		<view class="plye-view" wx:if="{{stateText === '已选择话术录音' && showAudioStop}}">
+			<view class="audio-row">
+				<view class="audio-button" bindtap="buttonAudioPlay">
+					<image wx:if="{{audioButtonText==='播放'}}" src="/style/iconfont/play.png"></image>
+					<image wx:if="{{audioButtonText==='停止'}}" src="/style/iconfont/suspend.png"></image>
+				</view>
+				<view class="slider-item">
+					<slider bindchange="sliderChange" bindchange="sliderChange" value="{{sliderValue}}" block-size="16"
+						block-color="#0ED3B0" min="0" max="{{audioMaxTime}}" />
+				</view>
+				<view bindtap="stopAudioFn" class="audio-tis">
+					<view class="time">{{audioTime}} </view>
+					<image  wx:if="{{hstype==='1'}}" src="/style/iconfont/close.png"></image>
+				</view>
+
+			</view>
+
+			<!-- <audio name="话术录音" bindpause="audioEnd" bindplay="audioPlay" bindtap='buttonAudioPlay' bindended="audioEnd"
+				style="width:100%" author="{{userName}}" src="{{plUploadUrl}}" id="myAudio"></audio> -->
+		</view>
+
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<!-- 分类 -->
+	</view>
+	<view class="input-item">
+		<radio-group data-list='items' bindchange="radioChange">
+			<view class="radio-row">
+				<label wx:for="{{items}}" wx:key="index">
+					<view class="weui-cell__hd">
+						<radio value="{{item.value}}" checked="true" />
+					</view>
+					<view class="weui-cell__bd">{{item.name}}</view>
+				</label>
+			</view>
+
+		</radio-group>
+	</view>
+</view>
+<view class="tz-view">
+	<view class="tz-title">
+		<switch disabled="{{hstype==='2'}}" type="checkbox" data-name="kdType" checked="{{kdType}}" bindchange="switchChange" />
+		<view>肯定跳转</view>
+	</view>
+	<block wx:if="{{kdType}}">
+
+		<view class="tz-row">
+			<view class="row-label">跳转路径:</view>
+			<view class="row-value">
+				<picker disabled="{{hstype==='2'}}" mode="multiSelector" data-tzId="tzIdKD" data-tzName="tzNameKD" bindchange="bindMultiPickerChange"
+					data-valueArr="multiIndex" data-name="tzTypeKD" range-key="moduleName"
+					bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+					<view class="picker">
+						{{tzNameKD}}
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="tz-row text">
+			<view class="row-label">关键字:</view>
+			<view class="row-value">
+				<textarea disabled="{{hstype==='2'}}" class="weui-input" data-name="keyWordKD" value="{{keyWordKD}}" maxlength="20" bindblur="bindInputChange"
+					placeholder="填写关键字" />
+			</view>
+		</view>
+		<view class="tz-row">
+			<view class="row-label">评级:</view>
+			<view class="row-value">
+				<block wx:if="{{hstype==='1'}}">
+					<radio-group  data-list='itemsTzKD' data-name="levelKD" bindchange="radioChange">
+					<label class="weui-cell weui-check__label" wx:for="{{itemsTzKD}}" wx:key="value">
+
+						<view class="weui-cell__hd">
+							<radio value="{{item.value}}" checked="{{item.checked}}" />
+						</view>
+						<view class="weui-cell__bd">{{item.name}}</view>
+					</label>
+				</radio-group>
+				</block>
+				<block wx:else>
+					<view style="padding-left :20rpx"></view>
+					{{levelKD}}
+				</block>
+				
+			</view>
+		</view>
+	</block>
+</view>
+<view class="tz-view">
+	<view class="tz-title">
+		<switch disabled="{{hstype==='2'}}" type="checkbox" data-name="fdType" checked="{{fdType}}" bindchange="switchChange" />
+		<view>否定跳转</view>
+	</view>
+	<block wx:if="{{fdType}}">
+
+		<view class="tz-row">
+			<view class="row-label">跳转路径:</view>
+			<view class="row-value">
+				<picker disabled="{{hstype==='2'}}" mode="multiSelector" bindchange="bindMultiPickerChange" data-tzId="tzIdFD" data-tzName="tzNameFD"
+					data-valueArr="multiIndexFD" data-name="tzTypeFD" range-key="moduleName"
+					bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndexFD}}" range="{{multiArray}}">
+					<view class="picker">
+						{{tzNameFD}}
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class="tz-row text">
+			<view class="row-label">关键字:</view>
+			<view class="row-value">
+				<textarea disabled="{{hstype==='2'}}" class="weui-input" data-name="keyWordFD" value="{{keyWordFD}}" maxlength="20" bindblur="bindInputChange"
+					placeholder="填写关键字" />
+			</view>
+		</view>
+		<view class="tz-row">
+			<view class="row-label">评级:</view>
+			<view class="row-value">
+				<block wx:if="{{hstype==='1'}}">
+				<radio-group data-list='itemsTzFD' data-name="levelFD" bindchange="radioChange">
+					<label class="weui-cell weui-check__label" wx:for="{{itemsTzFD}}" wx:key="value">
+
+						<view class="weui-cell__hd">
+							<radio value="{{item.value}}" checked="{{item.checked}}" />
+						</view>
+						<view class="weui-cell__bd">{{item.name}}</view>
+					</label>
+				</radio-group>
+				</block>
+				<block wx:else>
+					<view style="padding-left :20rpx"></view>
+					{{levelFD}}
+				</block>
+			</view>
+		</view>
+	</block>
+</view>
+<view class="tz-view">
+	<view class="tz-title">
+		<switch disabled="{{hstype==='2'}}" type="checkbox" data-name="wsbType" checked="{{wsbType}}" bindchange="switchChange" />
+		<view>未识别跳转</view>
+	</view>
+	<block wx:if="{{wsbType}}">
+
+		<view class="tz-row">
+			<view class="row-label">跳转路径:</view>
+			<view class="row-value">
+				<picker disabled="{{hstype==='2'}}" mode="multiSelector" bindchange="bindMultiPickerChange" data-tzId="tzIdWSB" data-tzName="tzNameWSB"
+					data-valueArr="multiIndexWSB" data-name="tzTypeWSB" range-key="moduleName"
+					bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndexWSB}}" range="{{multiArray}}">
+					<view class="picker">
+						<!-- {{multiArray[1][multiIndexWSB[1]].moduleName}} -->
+						{{tzNameWSB}}
+					</view>
+				</picker>
+			</view>
+		</view>
+		<!-- <view class="tz-row">
+			<view class="row-label">关键字:</view>
+			<view class="row-value">
+				<input class="weui-input" data-name="keyWordWSB" maxlength="20" bindblur="bindInputChange" placeholder="节点名称" />
+			</view>
+		</view> -->
+		<view class="tz-row">
+			<view class="row-label">评级:</view>
+			<view class="row-value">
+				<block wx:if="{{hstype==='1'}}">
+				<radio-group data-list='itemsTzWSB' data-name="levelWSB" bindchange="radioChange">
+					<label class="weui-cell weui-check__label" wx:for="{{itemsTzWSB}}" wx:key="value">
+
+						<view class="weui-cell__hd">
+							<radio value="{{item.value}}" checked="{{item.checked}}" />
+						</view>
+						<view class="weui-cell__bd">{{item.name}}</view>
+					</label>
+				</radio-group>
+				</block>
+				<block wx:else>
+					<view style="padding-left :20rpx"></view>
+					{{levelWSB}}
+				</block>
+			</view>
+		</view>
+	</block>
+</view>
+
+<view class="tz-view">
+	<view class="tz-title" style="justify-content: space-between;">
+		<View style="display:flex">
+			<switch disabled="{{hstype==='2'}}" type="checkbox" data-name="fzType" checked="{{fzType}}" bindchange="switchChange" />
+			<view>分支跳转</view>
+		</View>
+		<View wx:if="{{fzType}}" class="add-button" catchtap="addFZTZFn">
+			+分支
+		</View>
+
+	</view>
+	<block wx:if="{{fzType}}">
+		<block wx:for="{{FZTZArr}}" wx:key="index">
+
+			<view class="tz-row item">
+				<view class="row-label">跳转路径:</view>
+				<view class="row-value">
+					<picker disabled="{{hstype==='2'}}" mode="multiSelector" bindchange="bindMultiPickerChange" data-index="{{index}}" data-tzId="tzIdFZ"
+						data-tzName="tzNameFZ" data-valueArr="multiIndexFZ" data-name="tzTypeFZ" range-key="moduleName"
+						bindcolumnchange="bindMultiPickerColumnChange" value="{{item.multiIndexFZ}}" range="{{multiArray}}">
+						<view class="picker">
+							{{item.tzNameFZ}}
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="tz-row text">
+				<view class="row-label">关键字:</view>
+				<view class="row-value">
+					<textarea disabled="{{hstype==='2'}}" class="weui-input" data-index="{{index}}" value="{{item.keyWordFZ}}" data-name="keyWordFZ"
+						maxlength="20" bindblur="bindInputChange" placeholder="填写关键字" />
+				</view>
+			</view>
+			<view class="tz-row bottom-row">
+				<view class="row-label">评级:</view>
+				<view class="row-value">
+					<block wx:if="{{hstype==='1'}}">
+					<radio-group data-list='itemsTz' data-name="levelFZ" data-index="{{index}}" bindchange="radioChange">
+						<label class="weui-cell weui-check__label" wx:for="{{item.itemsTz}}" wx:for-item="checkedItem"
+							wx:key="value">
+
+							<view class="weui-cell__hd">
+								<radio value="{{checkedItem.value}}" checked="{{checkedItem.checked}}" />
+							</view>
+							<view class="weui-cell__bd">{{checkedItem.name}}</view>
+						</label>
+					</radio-group>
+					</block>
+					<block wx:else>
+					<view style="padding-left :20rpx"></view>
+					{{item.levelFZ}}
+				</block>
+				</view>
+			</view>
+		</block>
+
+	</block>
+</view>
+
+
+
+
+
+
+
+<view class="input-row">
+	<view class="button" bindtap="submitFn">
+		提 交
+	</view>
+</view>

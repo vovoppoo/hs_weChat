@@ -1,0 +1,88 @@
+/* pages/login/login.wxss */
+.main-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.login-view {
+  padding: 0 60rpx;
+  position: relative;
+  width: 100%;
+  padding-bottom: 140rpx;
+}
+
+.login-view .logo-row {
+  position: absolute;
+  width: calc(100% - 60px);
+  top: -250rpx;
+  text-align: center;
+}
+
+.login-view .logo-row image {
+  width: 200rpx;
+  height: 165rpx;
+}
+
+.login-view .title-row {
+  font-size: 44rpx;
+  padding-bottom: 40rpx;
+}
+
+.login-view .input-row {
+  border-bottom: 1rpx solid #F8F8F8;
+  margin-bottom: 50rpx;
+  position: relative;
+}
+
+.retrieve-button {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  color: #0DD3B0;
+  font-size: 24rpx;
+  z-index: 99;
+}
+
+.login-view .button-row {
+  padding-top: 20rpx;
+}
+
+
+.login-view .button-row .text-button {
+  font-size: 28rpx;
+  text-align: center;
+  color: #0ED3B0;
+}
+
+
+.login-view .button-row button {
+  color: white;
+  background-color: #0DD3B0 !important;
+  width: 100%;
+  padding: 20rpx 0;
+}
+
+.login-foot {
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30rpx;
+  align-items: center;
+}
+
+.login-foot .foot-left {
+  display: flex;
+}
+
+.login-foot .foot-left .cilck-color {
+  color: #0DD3B0;
+}
+
+.login-foot .foot-right {
+  color: #0DD3B0;
+  font-size: 28rpx;
+}

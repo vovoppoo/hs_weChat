@@ -1,0 +1,28 @@
+<!--pages/customer/add-list/add-list-customer.wxml-->
+<view class="import-view">
+  <view bindtap="selectflieFn" class="import-row">
+    <view>
+      <image src="/style/iconfont/add-icon.png"></image>
+    </view>
+    <view>
+      点击选择文件
+    </view>
+
+  </view>
+</view>
+<view class="down-button" bindtap="downModelFn">
+  下载模板
+</view>
+<view wx:if="{{showMenu}}" class="select-flie-view">
+  <view class="button-item wx" bindtap="selectWeChatFn">
+    <image src="/style/iconfont/wechat.png"> 
+
+    </image>
+  </view>
+  <view  class="button-item phone">
+    <image src="/style/iconfont/phone.png"> 
+
+    </image>
+  </view>
+</view>
+<!-- <web-view src="http://47.98.149.197/"></web-view> -->

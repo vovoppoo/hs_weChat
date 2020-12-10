@@ -1,0 +1,273 @@
+.page-navbar {
+  height: 200rpx;
+  background-color: #0DD3B0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+}
+
+.page-navbar .add-button {
+  position: absolute;
+  right: 30rpx;
+  top: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid white;
+  border-radius: 50rpx;
+  font-size: 44rpx;
+  text-align: center;
+  line-height: 37rpx;
+  color: white;
+}
+
+
+.page-navbar .search-button {
+  position: absolute;
+  right: 90rpx;
+  top: 17rpx;
+  width: 100rpx;
+  height: 40rpx;
+}
+
+
+
+.page-navbar .add-menu {
+  position: absolute;
+  right: -22rpx;
+  top: 65rpx;
+  z-index: 600;
+  background-color: white;
+  color: #6A6A6A;
+  font-size: 26rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  width: 180rpx;
+}
+
+
+.page-navbar .add-button.dis-none .add-menu {
+  display: none;
+}
+
+.page-navbar .add-menu .icon-menu {
+  position: absolute;
+  top: -30rpx;
+  right: 26rpx;
+  color: white;
+  font-size: 34rpx;
+}
+
+.page-navbar .add-menu .menu-item {
+  padding-bottom: 10rpx;
+  padding-top: 10rpx;
+}
+
+.page-navbar .add-menu .menu-item+.menu-item {
+  padding-top: 10rpx;
+  border-top: 1rpx solid #6A6A6A;
+}
+
+.page-navbar .search-button button {
+
+  width: 100rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 0;
+  color: white !important;
+  border-color: white !important;
+  border-radius: 30rpx;
+}
+
+
+
+.left-menu {
+  position: absolute;
+  left: 30rpx;
+  top: 18rpx;
+  width: 80%;
+}
+
+.left-menu .search {
+  margin: 20rpx;
+  background-color: white;
+  border: 1rpx solid #0DD3B0;
+  padding: 5rpx 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+}
+
+.left-menu .search input {
+  width: 100%;
+}
+
+.page-navbar .menu {
+  width: 100%;
+}
+
+.mode-list {
+  width: 100%;
+  color: #6A6A6A;
+  padding-bottom: 140rpx;
+}
+
+.no-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600rpx;
+  text-align: center;
+}
+
+.no-con image {
+  width: 108rpx;
+  height: 108rpx;
+}
+
+.no-con .tis-row {
+  color: #CCCCCC;
+  padding-top: 20rpx;
+}
+
+
+.mode-list .mode-card {
+  background-color: white;
+  margin: 20rpx 40rpx 0rpx;
+  padding: 30rpx 0rpx 30rpx 30rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid white;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.mode-card .right-button {
+  position: absolute;
+  right: -300rpx;
+  top: 0rpx;
+  height: 100%;
+  width: 300rpx;
+  display: flex;
+  text-align: center;
+}
+
+.right-button .card-button-h {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #42A5F5;
+  width: 100%;
+  color: white;
+}
+
+.right-button .card-button-r {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FA5151;
+  width: 100%;
+  color: white;
+}
+
+.mode-list .mode-card .card-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+}
+
+.mode-list .mode-card .card-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15rpx;
+  min-width: 15rpx;
+}
+
+.mode-list .mode-card .card-info .title {
+  font-weight: bold;
+  height: 42rpx;
+  color: black;
+}
+
+.mode-list .mode-card .card-info .time {
+  padding-top: 10rpx;
+  font-size: 26rpx;
+
+}
+
+
+.card-info .info-right .card-button {
+  display: flex;
+  justify-content: flex-end;
+  height: 42rpx;
+  align-items: center;
+}
+
+.card-info .info-right .card-button .button-item button {
+  width: 160rpx !important;
+  font-size: 24rpx;
+  font-weight: bold;
+  padding: 0;
+  color: #6A6A6A;
+  border-color: #6A6A6A;
+  border-radius: 30rpx;
+}
+
+.card-info .info-right .card-button.green button {
+  background-color: #07C160;
+  color: white;
+  border-color: #07C160;
+}
+
+.card-info .info-right .card-button.red button {
+  background-color: #FA5151;
+  color: white;
+  border-color: #FA5151;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress .label {
+  padding-bottom: 2rpx;
+  color: black;
+  font-size: 28rpx;
+}
+
+.progress progress {
+  margin-top: 20rpx;
+  border-radius: 20px;
+  border: 1px solid #87E9D7;
+}
+
+.progress .bottom-row {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+
+
+.progress .progress-box {
+  width: 75%;
+}
+
+.progress .tis {
+  width: 25%;
+  text-align: right;
+}
+
+.mark-view {
+  position: fixed;
+  height: 100vh;
+  width: 100vh;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 999;
+}

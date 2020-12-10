@@ -1,0 +1,55 @@
+<!-- <view class="title-row">
+	记录内容
+</view> -->
+
+<view class="input-row">
+	<view class="label">
+		类型:
+	</view>
+	<view class="input-item">
+		<radio-group data-list='items' bindchange="radioChange">
+			<view class="radio-row">
+				<label wx:for="{{items}}" wx:key="index">
+					<view class="weui-cell__hd">
+						<radio value="{{item.value}}" checked="{{item.checked}}" />
+					</view>
+					<view class="weui-cell__bd">{{item.name}}</view>
+				</label>
+			</view>
+
+		</radio-group>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view class="red-icon">*</view>
+		主题:
+	</view>
+	<view class="input-item">
+		<input class="weui-input" data-name="followTitle" maxlength="20" bindinput="bindInputChange" placeholder="填写沟通主题" />
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view class="red-icon">*</view>
+		方式:
+	</view>
+	<view class="input-item">
+		<input class="weui-input" data-name="followWay" maxlength="20" bindinput="bindInputChange" placeholder="填写沟通方式" />
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view class="red-icon">*</view>
+		详细内容:
+	</view>
+	<view class="input-item">
+		<textarea bindinput="bindInputChange" maxlength="500" data-name="followContent" placeholder="填写沟通内容" />
+		</view>
+</view>
+
+<view class="input-row">
+	<view class="button" bindtap="submitFn">
+		确认添加
+	</view>
+</view>

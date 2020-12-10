@@ -1,0 +1,52 @@
+page {
+  background-color: white;
+}
+
+.title-row {
+  font-size: 40rpx;
+  padding: 20rpx 20rpx 0;
+  font-weight: bold;
+}
+
+.input-row {
+  padding: 20rpx 40rpx 0;
+}
+
+.input-row .button {
+  padding: 20rpx 0;
+  margin: 40rpx 0 0;
+  background-color: #0ED3B0;
+  color: white;
+  border-radius: 10rpx;
+  border: 1rpx solid #0ED3B0;
+  text-align: center;
+}
+
+
+.input-row .label {
+  padding: 20rpx 0 10rpx;
+  display: flex;
+}
+
+.input-row .label .red-icon {
+  color: tomato;
+}
+
+.input-row .input-item {
+  padding: 10rpx 0;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.input-row .input-item .wx-input {
+  padding-bottom: 10rpx;
+}
+
+
+.input-row .input-item .radio-row {
+  display: flex;
+}
+
+.input-row .input-item .radio-row label {
+  display: flex;
+  padding-right: 20rpx;
+}

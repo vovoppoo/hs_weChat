@@ -1,0 +1,79 @@
+<!--logs.wxml-->
+<view class='page-navbar'>
+  <view class="add-button" bindtap="addTaskFn">
+    +
+  </view>
+  <view class="left-menu">
+
+    <view class="search">
+      <view class="icon">
+        <image src="/style/iconfont/Vector-2.png"></image>
+      </view>
+      <input class="weui-input" confirm-type="search" placeholder="搜索任务名称" auto-focus maxlength="20"
+        bindconfirm="getList" bindinput="bindKeyInput" data-label="taskName" />
+    </view>
+  </view>
+  <view class="right-menu">
+    <view style="width: 100%">
+      <com-navbar to-mode="red" bindclick="navbarClick" width="5" nav-width="1" slider-width="70"
+        active-index="{{navbarIndex}}" tabs="{{navlist}}"></com-navbar>
+    </view>
+
+  </view>
+
+</view>
+<view class="mode-list">
+
+  <view class="task-title">
+    <view class="label">任务名称：</view>
+    <view>南山滨海之窗花园任务</view>
+  </view>
+
+  <view class="mode-card">
+
+    <view style="width:100%" bindtap="toTaskInfoFn">
+      <view class="card-info">
+        <view class="info-left">
+          <view class="title">
+            <view>张先生</view>
+            <view>13117200204</view>
+            <view>
+              <image src="/style/iconfont/Vector-1.png"></image>
+            </view>
+          </view>
+          <view class="time">
+            通话录音：无
+          </view>
+          <view class="time">
+            <view>今日：1/5</view>
+            <view>本月：1/15</view>
+            <view>今日：1/50</view>
+          </view>
+          <view class="time">
+            最后跟进：2050.5.10 21:35:22
+          </view>
+        </view>
+        <view class="info-right">
+          <view class="card-button">
+            <view>
+              <button catchtap="playEventFn" type="default" data-name="新安碧海花园任务" data-state="1" plain="true">B</button>
+            </view>
+            <view class="grey">
+              <button catchtap="playEventFn" type="default" data-name="新安碧海花园任务" data-state="1"
+                plain="true">未拨打</button>
+            </view>
+
+          </view>
+          <view class="time">
+
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+</view>
+
+
+<wxs module="filter" src="./../../../filter/filter.wxs"></wxs>

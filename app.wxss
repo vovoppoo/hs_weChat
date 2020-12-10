@@ -1,0 +1,75 @@
+/**app.wxss**/
+@import './style/D-DIN-Bold.wxss';
+
+
+page {
+  height: 100%;
+    /* 使用css变量定义安全边距 */
+    --iphonex-fix-bottom:0;
+    --iphonex-fix-bottom: constant(safe-area-inset-bottom); /* iOS11.2 beta 开始被弃用 */
+    --iphonex-fix-bottom: env(safe-area-inset-bottom);
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+.backgroundimg {
+  position: absolute;
+  background-color: #0ED3B0;
+  z-index: -1;
+}
+
+
+page {
+  background-color: #F5F5F9;
+  font-family: "D-DIN";
+}
+
+page {
+  background-color: #F5F5F9;
+  font-family: "D-DIN";
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-nav button {
+  color: white;
+  background-color: #0DD3B0 !important;
+  width: 94% ! important;
+}
+
+.title-back {
+  position: relative;
+  height: 40rpx;
+}
+
+.title-back .title-back-icon {
+  position: absolute;
+  top: -1rpx;
+  left: -10rpx;
+  background-color: #B1F1E5;
+  width: 30rpx;
+  height: 30rpx;
+  border: 1rpx solid #B1F1E5;
+  overflow: hidden;
+  border-radius: 15rpx;
+}

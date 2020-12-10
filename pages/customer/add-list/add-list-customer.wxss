@@ -1,0 +1,56 @@
+/* pages/customer/add-list/add-list-customer.wxss */
+
+.import-view {
+  background-color: white;
+  margin: 40rpx 40rpx 20rpx;
+  color: #0ed3b0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+}
+
+.import-view image {
+  width: 42rpx;
+  height: 42rpx;
+  padding-right: 10rpx;
+}
+
+.import-view .import-row {
+  display: flex;
+}
+
+.down-button {
+  color: #0ed3b0;
+  text-align: right;
+  padding-right: 40rpx;
+  font-weight: bold;
+
+}
+
+
+.select-flie-view {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+}
+
+.select-flie-view .button-item {
+  width: 50%;
+  text-align: center;
+  padding: 40rpx 0rpx;
+  background-color: white;
+}
+
+.select-flie-view .wx image {
+  width: 88rpx;
+  height: 76rpx;
+}
+
+
+.select-flie-view .phone image {
+  width: 52rpx;
+  height: 76rpx;
+}

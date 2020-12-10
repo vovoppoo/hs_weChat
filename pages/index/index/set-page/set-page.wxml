@@ -1,0 +1,11 @@
+<!--pages/index/index/set-page/set-page.wxml-->
+<View class="recharge-view">
+  <view class="recharge-card">
+    <view class="title">
+      充值余额
+    </view>
+    <view class="value">
+      ￥{{money}}
+    </view>
+  </view>
+</View>

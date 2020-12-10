@@ -1,0 +1,109 @@
+<!--logs.wxml-->
+<wxs module="speechcraft" src="./task.wxs"></wxs>
+<view class='page-navbar'>
+	<view class="add-button" bindtap="addTaskFn">
+		+
+	</view>
+	<view class="left-menu">
+
+		<view class="search">
+			<view class="icon">
+				<image src="/style/iconfont/Vector-2.png"></image>
+			</view>
+			<input class="weui-input" confirm-type="search" placeholder="搜索任务名称" maxlength="20" bindconfirm="getList"
+				bindinput="bindKeyInput" data-label="taskName" />
+		</view>
+	</view>
+	<view class="right-menu">
+		<view class="section">
+			<picker bindchange="bindPickerChange" value="{{array.value}}" range-key="{{'name'}}" range="{{array}}">
+				<view class="picker">
+					{{array[index].name || "全部"}} <text class="icon">▲</text>
+				</view>
+			</picker>
+		</view>
+	</view>
+
+</view>
+<view class="mode-list">
+	<block wx:if="{{taskData.length>0}}">
+		<block wx:for="{{taskData}}" wx:key="index">
+			<view class="mode-card" bindtouchstart="{{speechcraft.touchstart}}" catchtouchend="{{speechcraft.touchend}}">
+				<view class="right-button">
+					<view class="card-button-h" data-id="1" bindtap="goAddFn">
+						开始/暂停
+					</view>
+				</view>
+				<view style="width:100%" bindtap="toTaskInfoFn" data-id="{{item.id}}">
+					<view class="card-info">
+						<view class="info-left">
+							<view class="title">
+								{{item.taskName}}
+							</view>
+							<view class="time">
+								创建时间： {{item.gmtCreate}}
+							</view>
+						</view>
+						<view class="info-right">
+							<view class="card-button">
+								<view>
+									<button catchtap="playEventFn" type="default" data-name="新安碧海花园任务" data-state="1"
+										plain="true">{{filter.tsskStatus(item.status)}}</button>
+								</view>
+								<!-- <view class="card-clo-button">
+						<button type="default" catchtap="cloEventFn" data-name="新安碧海花园任务" plain="true">停止</button>
+					</view> -->
+
+							</view>
+							<view class="time">
+
+							</view>
+						</view>
+					</view>
+					<view class="progress">
+						<view class="progress-box">
+							<view class="label">
+								<text style="color:#6A6A6A;dispaly: inline-block">进度:</text>
+								{{item.completeUserCount}}/{{item.userCount}}
+							</view>
+							<view>
+								<progress percent="{{item.callOutProgressValue}}" color="#87E9D7"  stroke-width="10" />
+							</view>
+
+
+
+						</view>
+						<view class="tis">
+							<view class="label">
+								{{item.callOutProgress || '0%'}}
+							</view>
+							<view class="bottom-row">
+								任务完成度
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</block>
+	</block>
+	<block wx:else>
+		<view class="no-con">
+			<view>
+				<view class="icon">
+					<image src="/style/iconfont/tis.png"></image>
+				</view>
+				<view class="tis-row">
+					暂无任务
+				</view>
+				<view class="tis-row">
+					请添加新的任务
+				</view>
+			</view>
+		</view>
+
+	</block>
+
+</view>
+
+
+<wxs module="filter" src="./../../filter/filter.wxs"></wxs>

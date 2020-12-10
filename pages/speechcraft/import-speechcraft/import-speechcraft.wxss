@@ -1,0 +1,204 @@
+.page-navbar {
+  height: 150rpx;
+  background-color: #0DD3B0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-nav button {
+  color: white;
+  background-color: #0DD3B0 !important;
+  width: 46% ! important;
+}
+
+.bottom-nav button.info {
+  color: #666666;
+  background-color: #DADADA !important;
+  width: 46% ! important;
+}
+
+.page-navbar .search-button {
+  position: absolute;
+  right: 40rpx;
+  top: 85rpx;
+  width: 100rpx;
+  height: 40rpx;
+}
+
+.page-navbar .add-menu {
+  position: absolute;
+  right: 90rpx;
+  top: 17rpx;
+  z-index: 600;
+  background-color: white;
+  color: #6A6A6A;
+}
+
+.page-navbar .add-menu {
+  position: absolute;
+  right: 10rpx;
+  top: 84rpx;
+  z-index: 600;
+  background-color: white;
+  color: #6A6A6A;
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.page-navbar .add-menu .icon-menu {
+  position: absolute;
+  top: -36rpx;
+  right: 26rpx;
+  color: white;
+  font-size: 34rpx;
+}
+
+.page-navbar .add-menu .menu-item {
+  padding-bottom: 10rpx;
+}
+
+.page-navbar .add-menu .menu-item+.menu-item {
+  padding-top: 10rpx;
+  border-top: 1rpx solid #6A6A6A;
+}
+
+.page-navbar .search-button button {
+
+  width: 100rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  padding: 0;
+  color: #6A6A6A !important;
+  border-color: #6A6A6A !important;
+  border-radius: 30rpx;
+}
+
+
+
+.left-menu {
+  position: absolute;
+  left: 30rpx;
+  top: 60rpx;
+  width: 76%;
+}
+
+.left-menu .search {
+  margin: 20rpx;
+  background-color: white;
+  border: 1rpx solid #0DD3B0;
+  padding: 5rpx 20rpx;
+  border-radius: 30rpx;
+}
+
+.page-navbar .menu {
+  width: 100%;
+}
+
+.mode-list {
+  width: 100%;
+  color: #6A6A6A;
+}
+
+.mode-list .mode-card {
+  background-color: white;
+  margin: 20rpx;
+  padding: 30rpx 0rpx 30rpx 30rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid white;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.mode-list .mode-card .card-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mode-list .mode-card .card-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25rpx;
+  min-width: 15rpx;
+}
+
+.mode-list .mode-card .card-info .title {
+  font-weight: bold;
+  height: 42rpx;
+  color: black;
+  padding-bottom: 10rpx;
+
+}
+
+.mode-list .mode-card .card-info .time {
+  padding-top: 10rpx;
+  font-size: 26rpx;
+
+}
+
+
+.card-info .info-right .card-button {
+  display: flex;
+  justify-content: flex-end;
+  height: 42rpx;
+  align-items: center;
+}
+
+.card-info .info-right .card-button button {
+  width: 120rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  padding: 0;
+  color: #6A6A6A;
+  border-color: #6A6A6A;
+  border-radius: 30rpx;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress .label {
+  padding-bottom: 2rpx;
+  color: black;
+  font-size: 28rpx;
+}
+
+.progress progress {
+  margin-top: 20rpx;
+  border-radius: 20px;
+
+  border: 1px solid #10AEFF;
+}
+
+.progress .bottom-row {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+
+
+.progress .progress-box {
+  width: 75%;
+}
+
+.progress .tis {
+  width: 25%;
+  text-align: right;
+}

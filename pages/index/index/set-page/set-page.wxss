@@ -1,0 +1,20 @@
+/* pages/index/index/set-page/set-page.wxss */
+.recharge-view {
+  width: 100%;
+}
+
+.recharge-card {
+  margin: 30px;
+}
+
+
+.recharge-card .title {
+  font-size: 46px;
+  border-bottom: 1px solid #EEEEEE;
+  padding: 20px;
+}
+
+.recharge-card .value {
+  font-size: 50px;
+  padding: 20px;
+}

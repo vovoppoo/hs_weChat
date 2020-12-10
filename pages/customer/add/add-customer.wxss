@@ -1,0 +1,171 @@
+/* pages/customer/add/add-customer.wxss */
+
+page {
+  background-color: white;
+}
+
+
+.title-row {
+  font-size: 40rpx;
+  padding: 30rpx 40rpx 20rpx;
+  font-weight: bold;
+}
+
+.input-row {
+  padding: 0rpx 40rpx 10rpx;
+}
+
+.title-back-icon {
+  z-index: -1;
+}
+
+.input-row .button {
+  padding: 20rpx 0;
+  margin: 40rpx 0 0;
+  background-color: #0DD3B0;
+  color: white;
+  border-radius: 10rpx;
+  border: 1rpx solid #0DD3B0;
+  text-align: center;
+}
+
+
+.input-row .label {
+  padding: 20rpx 0 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-row .label .add-tag {
+  color: #0DD3B0;
+
+}
+
+.input-row .label .red-icon {
+  color: tomato;
+  display: inline-block;
+}
+
+.input-row .input-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.input-row .input-item .wx-input {
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+
+.input-row .input-item .radio-row {
+  display: flex;
+}
+
+.input-row .input-item .radio-row label {
+  display: flex;
+  padding-right: 20rpx;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-row .tag-button {
+  display: flex;
+  align-items: center;
+  background-color: #CCCCCC;
+  padding: 10rpx 40rpx;
+  border: 1rpx solid #CCCCCC;
+  border-radius: 40rpx;
+  margin-right: 30rpx;
+  font-size: 28rpx;
+  color: white;
+  margin-bottom: 8rpx;
+}
+
+.tag-row .tag-button.nan {
+  background-color: #93EBDB;
+  border: 1rpx solid #93EBDB;
+}
+
+.tag-row .tag-button.nan.is {
+  background-color: #0DD3B0;
+  border: 1rpx solid #0DD3B0;
+}
+
+.tag-row .tag-button.nv {
+  background-color: #FCBEE3;
+  border: 1rpx solid #FCBEE3;
+}
+
+.tag-row .tag-button.nv.is {
+  background-color: #F526A0;
+  border: 1rpx solid #F526A0;
+}
+
+
+
+.tag-row .tag-button image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+
+.mark-view {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.mark-view .con-view {
+  width: 100%;
+}
+
+.mark-view .con-view .title {
+  margin: 0 40rpx;
+  background-color: white;
+  padding: 30rpx 20rpx;
+  text-align: center;
+}
+
+.mark-view .con-view .input-item {
+  margin: 0 40rpx;
+  background-color: white;
+  padding: 30rpx 20rpx;
+  text-align: center;
+}
+
+.mark-view .con-view .input-item input {
+
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.mark-view .con-view .button-row {
+  margin: 0 40rpx;
+  background-color: white;
+  padding: 30rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.con-view .button-row .button-item {
+  width: 45%;
+  padding: 20rpx 10rpx;
+  background-color: #CCCCCC;
+  border-radius: 15rpx;
+  text-align: center;
+  color: white;
+  font-size: 34rpx;
+}
+
+.con-view .button-row .button-item.qd {
+  background-color: #0ED3B0;
+
+}

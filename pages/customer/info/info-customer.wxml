@@ -1,0 +1,156 @@
+<!--pages/customer/info/info-customer.wxml-->
+<view wx:if="{{userType===1}}" class="menu">
+	<com-navbar to-mode="red" bindclick="navbarClick" width="0" nav-width="1" slider-width="130"
+		active-index="{{navbarIndex}}" tabs="{{navlist}}"></com-navbar>
+</view>
+<view wx:if="{{userType===2}}" class="menu">
+	<com-navbar to-mode="red" bindclick="navbarClick" width="35" nav-width="1" slider-width="130"
+		active-index="{{navbarIndex}}" tabs="{{navlist}}"></com-navbar>
+</view>
+<view wx:if="{{navbarIndex===0}}" class="info-view">
+	<view class="label-col">
+		<block wx:for="{{labelList}}" wx:key="index">
+			<view class="label-item">
+				{{item}} :
+			</view>
+		</block>
+	</view>
+	<view class="value-col">
+		<block wx:for="{{dataList}}" wx:key="index">
+			<view class="value-item">
+				{{item}}
+			</view>
+		</block>
+	</view>
+	<view class="bottom-row">
+		<view class="botton-item">
+			<button type="primary" bindtap="goPhoneFn">
+				拨打电话
+			</button>
+		</view>
+		<view class="botton-item">
+			<button type="primary" bindtap="goWecharFn">
+				添加微信
+			</button>
+		</view>
+	</view>
+</view>
+<view wx:if="{{navbarIndex===1}}" class="record-view">
+	<block wx:for="{{dataList2}}" wx:key="index">
+		<view class="record-view">
+			<view class="title-row">
+				<view class="black-icon">
+				</view>
+				<view class="title-text">
+					{{filter.dateFormat(item.gmtCreate,'yyyy-MM-dd')}}
+				</view>
+
+			</view>
+			<view class="record-con">
+
+				<view class="record-item">
+					<view class="label">
+						跟进人员 :
+					</view>
+					<view class="value">
+						{{item.followName}}
+					</view>
+				</view>
+				<view class="record-item">
+					<view class="label">
+						跟进主题 :
+					</view>
+					<view class="value">
+						{{item.followTitle}}
+					</view>
+				</view>
+				<view class="record-item">
+					<view class="label">
+						跟进方式 :
+					</view>
+					<view class="value">
+						{{item.followWay}}
+					</view>
+				</view>
+				<view class="record-item">
+					<view class="label">
+						跟进详情 :
+					</view>
+					<view class="value">
+						{{item.followContent}}
+					</view>
+				</view>
+
+
+			</view>
+
+		</view>
+	</block>
+
+
+	<view class="bottom-row">
+		<view class="botton-item-one">
+			<button type="primary" bindtap="goAddRecordFn">
+				添加跟进记录
+			</button>
+		</view>
+	</view>
+
+
+</view>
+
+<view wx:if="{{navbarIndex===2}}" class="call-view">
+
+	<view class="call-title">
+		通话记录
+	</view>
+	<block wx:for="{{dataList3}}" wx:key="index">
+		<view class="call-item">
+			<view class="menu-row">
+				<view class="time">2020-7-20</view>
+				<view class="state">已接通</view>
+				<view class="button" data-display="{{item.display}}" data-index="{{index}}" bindtap="changeMeunFn">
+					<view wx:if="{{item.display==''}}">
+						﹀
+					</view>
+					<view wx:else>
+						︿
+					</view>
+				</view>
+			</view>
+			<view class="con-view {{item.display}}">
+				<view class="con-row">
+					<view class="label">所属任务:</view>
+					<view class="value">南山滨海之窗花园任务</view>
+				</view>
+				<view class="con-row">
+					<view class="label">呼叫记录:</view>
+					<view class="value">已接通</view>
+				</view>
+				<view class="con-row">
+					<view class="label">通话时间:</view>
+					<view class="value">00:37</view>
+				</view>
+				<view class="con-row">
+					<view class="label">命中关键字:</view>
+					<view class="value">3</view>
+				</view>
+				<view class="con-row">
+					<view class="label">通话次数:</view>
+					<view class="value">0/5</view>
+				</view>
+				<view class="con-row">
+					<view></view>
+				</view>
+
+			</view>
+
+		</view>
+	</block>
+
+
+
+
+
+</view>
+<wxs module="filter" src="./../../../filter/filter.wxs"></wxs>

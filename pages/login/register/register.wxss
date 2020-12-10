@@ -1,0 +1,111 @@
+page {
+  background-color: white;
+}
+
+.main-page {
+  width: 100%;
+  background-color: white;
+}
+
+.login-view {
+  padding: 0 30rpx;
+  position: relative;
+  padding-bottom: 100rpx;
+}
+
+
+
+.login-view .title-row {
+  font-size: 44rpx;
+  padding: 40rpx 0 30rpx;
+}
+
+.login-view .input-row {
+  border-bottom: 1rpx solid #E5E5E5;
+  margin-top: 50rpx;
+  position: relative;
+}
+
+.login-view .input-row input {
+  padding: 10rpx 0;
+  font-size: 34rpx;
+}
+
+.input-row .input-tis {
+  color: #808080;
+}
+
+.input-row .phone-button button {
+  width: 100%;
+  border: none;
+  text-align: left;
+  padding: 10rpx 0;
+  font-weight: normal;
+}
+
+.login-view .input-row.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-view .input-row.flex .button button {
+  width: 220rpx;
+  color: white;
+  font-weight: normal;
+  font-size: 28rpx;
+  padding: 20rpx 10rpx;
+  background-color: #0DD3B0;
+}
+
+
+.login-view .input-row.flex .button.hei button {
+  background-color: #F4F7FD;
+  color: #999999;
+}
+
+.retrieve-button {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  color: #0DD3B0;
+  font-size: 24rpx;
+}
+
+.login-view .button-row {
+  padding-top: 80rpx;
+}
+
+
+.login-view .button-row button {
+  color: white;
+  background-color: #0DD3B0 !important;
+  width: 100%;
+  padding: 20rpx 0;
+}
+
+.login-view .button-row.is-true button {
+  background-color: #F4F7FD;
+}
+
+.login-foot {
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30rpx;
+  align-items: center;
+}
+
+.login-foot .foot-left {
+  display: flex;
+  align-items: center;
+}
+
+.login-foot .foot-left .cilck-color {
+  color: #0DD3B0;
+}
+
+.login-foot .foot-right {
+  color: #0DD3B0;
+  font-size: 28rpx;
+}

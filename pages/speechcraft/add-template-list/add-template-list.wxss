@@ -1,0 +1,256 @@
+/* pages/speechcraft/add-template-list/add-template-list.wxss */
+
+page {
+  background-color: white;
+}
+
+.menu-view {
+  padding: 20rpx 0;
+  position: relative;
+}
+
+.top-button {
+  position: fixed;
+  right: 10rpx;
+  bottom: 200rpx;
+  border: 1rpx solid #0DD3B0;
+  background-color: #0DD3B0;
+  border-radius: 50rpx;
+  width: 50rpx;
+  height: 50rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 36rpx;
+  overflow: hidden;
+  line-height: 72rpx;
+  z-index: 99;
+}
+
+
+
+.menu-view .menu-item-row {
+  width: 100%;
+  font-size: 32rpx;
+}
+
+.menu-view .menu-item-row .menu-row {
+  width: 100%;
+  font-size: 40rpx;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  font-weight: bold;
+}
+
+.menu-view .label {
+  padding-left: 35rpx;
+  z-index: 5;
+  color: #333333;
+}
+
+.menu-view .label>view {
+  display: inline-block;
+}
+
+.menu-view .label image {
+  width: 48rpx;
+  height: 26rpx;
+}
+
+.menu-view .label .up image {
+  transform: rotate(180deg);
+}
+
+
+
+.menu-view .button {
+  padding-right: 20rpx;
+  font-weight: bold;
+  color: #0ED3B0;
+  display: flex;
+}
+
+.menu-view .button .add-node-button {
+  display: flex;
+  justify-content: center;
+  padding-left: 20rpx;
+}
+
+
+.menu-view .button image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+
+.menu-view .button .down image {
+  width: 34rpx;
+  height: 34rpx;
+  transform: rotate(90deg);
+}
+
+.menu-view .button .up image {
+  width: 34rpx;
+  height: 34rpx;
+  transform: rotate(270deg);
+}
+
+
+
+
+.menu-view .menu-item-row .menu-con {
+  margin: 0rpx 0 0rpx 40rpx;
+}
+
+.menu-con .menu-con-add-button {
+  width: 100%;
+  font-size: 32rpx;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  margin: 10rpx 0;
+  color: #0ED3B0;
+  font-weight: bold;
+}
+
+.menu-con .menu-con-add-button.input {
+  justify-content: space-between;
+  background-color: #F4F7FD;
+  color: #8a8888;
+}
+
+.menu-con-add-button.input .input-picker {
+  width: 26%;
+  padding-left: 20rpx;
+}
+
+.menu-con-add-button.input .inp-picker {
+  border-bottom: 1rpx solid #8a8888;
+  width: 160rpx;
+}
+
+
+
+
+.menu-con-add-button.input .input-inp {
+  width: 100%;
+  padding-left: 20rpx;
+}
+
+.menu-con-add-button.input .input-inp input {
+  border-bottom: 1rpx solid #8a8888;
+  width: 100%;
+  color: black !important;
+  font-weight: normal;
+}
+
+.menu-con-add-button.input .input-button {
+  display: flex;
+  padding-right: 10rpx;
+
+}
+
+.input-button image {
+  width: 50rpx;
+  height: 50rpx;
+  padding: 0 10rpx;
+}
+
+.menu-con-add-button.input .input-button button {
+  padding: 8rpx 5rpx;
+  margin-right: 10rpx;
+  width: 50rpx;
+}
+
+.menu-con-add-button.input .input-button .warn {
+  background-color: #DE403B;
+  color: white;
+}
+
+
+
+
+.icon-add {
+  font-size: 60rpx;
+  line-height: 56rpx;
+  padding-right: 10rpx;
+  height: 60rpx;
+}
+
+.menu-item-row .menu-con .menu-con-row {
+  width: 100%;
+  font-size: 34rpx;
+  font-weight: bold;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14rpx 0;
+  margin: 10rpx 0;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+
+.node-view {
+  margin-left: 60rpx;
+}
+
+.node-view .node-row {
+  padding-bottom: 20rpx;
+  margin-top: 20rpx;
+  border-bottom: 1rpx solid #F2F2F2;
+  color: #999999;
+}
+
+.bottom-add-row {
+  width: 90%;
+  font-size: 32rpx;
+  background-color: #0ED3B0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  margin: 5%;
+  border-radius: 15rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.bottom-add-row .input-button {
+  display: flex;
+}
+
+.bottom-add-row .add-button {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.bottom-add-row .input-procedure {
+  width: 75%;
+  padding-right: 20rpx;
+}
+
+.bottom-add-row .input-procedure input {
+  color: white;
+  border-bottom: 1rpx solid #8a8888;
+}
+
+.bottom-add-row .input-button button {
+  padding: 8rpx 5rpx;
+  margin-left: 10rpx;
+  width: 50rpx;
+}
+
+.bottom-add-row .input-button .warn {
+  background-color: #DE403B;
+  color: white;
+}

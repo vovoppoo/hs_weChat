@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "流程设置",
+  "usingComponents": {
+    "com-input-model": "../../../components/com-input-model/index"
+  }
+}

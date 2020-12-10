@@ -1,0 +1,14 @@
+<view class="com-menu {{showView?'':'dis'}}" catchtap="exitFn">
+  <view class="menu-view">
+    <block wx:for="{{menuArr}}" wx:key="index">
+      <view class="menu-item" catchtap="menuClick" data-url="{{item.url}}" wx:key="index">
+        {{item.name}}
+      </view>
+    </block>
+
+    <view class="menu-item bottom" bindtap="exitFn">
+      取消
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,311 @@
+/* pages/task/add-page/add-task-page.wxss */
+
+page {
+  background-color: white;
+}
+
+
+.title-row {
+  font-size: 40rpx;
+  padding: 30rpx 40rpx 20rpx;
+  font-weight: bold;
+}
+
+.input-row {
+  padding: 0rpx 40rpx 10rpx;
+}
+
+.title-back-icon {
+  z-index: -1;
+}
+
+.input-row .button {
+  padding: 20rpx 0;
+  margin: 40rpx 0 0;
+  background-color: #0DD3B0;
+  color: white;
+  border-radius: 10rpx;
+  border: 1rpx solid #0DD3B0;
+  text-align: center;
+}
+
+
+.input-row .label {
+  padding: 20rpx 0 10rpx;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.input-row .label .add-tag {
+  color: #0DD3B0;
+
+}
+
+.input-row .label .red-icon {
+  color: tomato;
+  display: inline-block;
+}
+
+.input-row .input-item {
+  margin: 20rpx 0 0rpx 40rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.input-item .time-row {
+  display: flex;
+  align-items: center;
+}
+
+.input-item picker {
+  width: 170rpx;
+}
+
+.input-item.hs picker {
+  width: 100%;
+}
+
+.input-item .picker {
+  color: #808080;
+}
+
+
+.input-row .input-item .title {
+  padding: 0rpx 10rpx 20rpx;
+}
+
+
+.input-row .input-item .title .tis {
+  font-size: 28rpx;
+  color: tomato;
+}
+
+.input-row .input-item .wx-input {
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+
+.input-row .input-item .radio-row {
+  display: flex;
+}
+
+.input-row .input-item .radio-row label {
+  display: flex;
+  padding-right: 20rpx;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-row .tag-button {
+  display: flex;
+  align-items: center;
+  background-color: #CCCCCC;
+  padding: 10rpx 28rpx;
+  border: 1rpx solid #CCCCCC;
+  border-radius: 40rpx;
+  margin-right: 30rpx;
+  font-size: 28rpx;
+  color: white;
+  margin-bottom: 8rpx;
+}
+
+.tag-row .tag-button.nan {
+  background-color: #93EBDB;
+  border: 1rpx solid #93EBDB;
+}
+
+.tag-row .tag-button.nan.is {
+  background-color: #0DD3B0;
+  border: 1rpx solid #0DD3B0;
+}
+
+.tag-row .tag-button.nv {
+  background-color: #FCBEE3;
+  border: 1rpx solid #FCBEE3;
+}
+
+.tag-row .tag-button.nv.is {
+  background-color: #F526A0;
+  border: 1rpx solid #F526A0;
+}
+
+
+
+.tag-row .tag-button image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+
+.mark-view {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+}
+
+.mark-view .con-view {
+  width: 100%;
+}
+
+.mark-view .con-view .title {
+  margin: 0 40rpx;
+  background-color: white;
+  padding: 30rpx 40rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}
+
+.mark-view .con-view .input-item {
+  margin: 0 40rpx;
+  background-color: white;
+  padding: 10rpx 40rpx;
+}
+
+.mark-view .con-view .input-item .label {
+  padding: 10rpx 20rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.con-view .input-item .label .select-p {
+  width: 200rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #E5E5E5;
+  margin-left: 40rpx;
+}
+
+
+.mark-view .con-view .input-item .value-view {
+  padding: 10rpx 20rpx;
+}
+
+.input-item .value-view .tag-button {
+  background-color: #CCCCCC;
+  padding: 10rpx 20rpx;
+  border: 1rpx solid #CCCCCC;
+  border-radius: 40rpx;
+  margin-right: 33rpx;
+  font-size: 28rpx;
+  color: white;
+  margin-bottom: 14rpx;
+  width: 60rpx;
+  display: inline-block;
+}
+
+.input-item .value-view .tag-button.nan {
+  background-color: #93EBDB;
+  border: 1rpx solid #93EBDB;
+}
+
+.input-item .value-view .tag-button.data-tag {
+  width: 130rpx;
+  background-color: #0DD3B0;
+  border: 1rpx solid #0DD3B0;
+  border-radius: 16rpx;
+}
+
+
+
+.input-item .value-view .tag-button.nan.is {
+  background-color: #0DD3B0;
+  border: 1rpx solid #0DD3B0;
+}
+
+.mark-view .con-view .input-item input {
+  border-bottom: 1rpx solid #E5E5E5;
+  margin: 10rpx 20rpx;
+}
+
+.input-item .value-view .time-row {
+  display: flex;
+  align-items: baseline;
+  padding: 10rpx 20rpx;
+}
+
+.input-item .value-view .time-row .picker {
+  width: 130rpx;
+  text-align: center;
+}
+
+.input-item .value-view .time-row picker {
+  border-bottom: 1rpx solid #E5E5E5;
+  margin: 10rpx 20rpx;
+}
+
+.mark-view .con-view .button-row {
+  margin: 0 40rpx;
+  background-color: white;
+  padding: 30rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.con-view .button-row .button-item {
+  width: 45%;
+  padding: 20rpx 10rpx;
+  background-color: #CCCCCC;
+  border-radius: 15rpx;
+  text-align: center;
+  color: white;
+  font-size: 34rpx;
+}
+
+.con-view .button-row .button-item.qd {
+  background-color: #0ED3B0;
+
+}
+
+.tabel-view {
+  border: 1px solid #E5E5E5;
+}
+
+.tis-view {
+  font-size: 28rpx;
+  padding: 20rpx 20rpx 0;
+  color: #808080;
+}
+
+.tabel-view .tabel-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.tabel-view .tabel-row.tabel-row {
+  border-top: 1px solid #E5E5E5;
+  text-align: center;
+}
+
+.tabel-view .tabel-row .tabel-title {
+  padding: 20rpx 10rpx;
+  width: 25%;
+  text-align: center;
+}
+
+.tabel-view .tabel-row .tabel-title.tabel-title {
+  border-right: 1px solid #E5E5E5;
+  font-size: 26rpx;
+  background-color: #F4F7FD;
+}
+
+.tabel-view .tabel-row .tabel-value.tabel-value {
+  border-right: 1px solid #E5E5E5;
+  font-size: 28rpx;
+
+}
+
+.tabel-view .tabel-row .tabel-value {
+  padding: 14rpx 10rpx;
+  width: 25%;
+}

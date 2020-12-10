@@ -1,0 +1,9 @@
+<view class="com-navbar">
+  <block wx:for="{{tabs}}" wx:key="text">
+    <view id="{{index}}" data-item="{{item}}" data-url="{{item.url}}"
+     data-route="{{item.route}}" class="com-navbar__item {{activeIndex == index ? 'com-bar__item_on' : ''}}" bindtap="tabClick">
+      <view class="com-navbar__title {{activeIndex===index? 'active-text':''}}">{{item.text}}</view>
+    </view>
+  </block>
+  <view class="com-navbar__slider" style="left: {{sliderLeft}}px;width: {{sliderWidth}}rpx; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+</view>

@@ -1,0 +1,215 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.11.2",
+  "appid": "wxde9791b788a0261d",
+  "projectname": "hs_WeChat",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "pages/data-statistics/statistics",
+          "pathName": "pages/data-statistics/statistics",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/speechcraft",
+          "pathName": "pages/speechcraft/speechcraft",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/task/task",
+          "pathName": "pages/task/task",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/import-speechcraft/import-speechcraft",
+          "pathName": "pages/speechcraft/import-speechcraft/import-speechcraft",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/add-speechcraft/add-speechcraft",
+          "pathName": "pages/speechcraft/add-speechcraft/add-speechcraft",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/add-template-list/add-template-list",
+          "pathName": "pages/speechcraft/add-template-list/add-template-list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/customer/customer",
+          "pathName": "pages/customer/customer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/customer/add/add-customer",
+          "pathName": "pages/customer/add/add-customer",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/customer/info/info-customer",
+          "pathName": "pages/customer/info/info-customer",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/add-template-list/add-template-list",
+          "pathName": "pages/speechcraft/add-template-list/add-template-list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/index/index/recharge-record/recharge-record",
+          "pathName": "pages/index/index/recharge-record/recharge-record",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/add-speechcraft/add-speechcraft",
+          "pathName": "pages/speechcraft/add-speechcraft/add-speechcraft",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/add-template-list/add-template-list",
+          "pathName": "pages/speechcraft/add-template-list/add-template-list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/add-template-list/add-node/add-node",
+          "pathName": "pages/speechcraft/add-template-list/add-node/add-node",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/task/task-info/task-info",
+          "pathName": "pages/task/task-info/task-info",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/speechcraft/add-template-list/add-node/add-node",
+          "pathName": "pages/speechcraft/add-template-list/add-node/add-node",
+          "query": "id=60&hsId=6",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/bar/index",
+          "pathName": "pages/bar/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/task/add-page/add-task-page",
+          "pathName": "pages/task/add-page/add-task-page",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index/recharge/recharge",
+          "pathName": "pages/index/index/recharge/recharge",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/register/register",
+          "pathName": "pages/login/register/register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/speechcraft/new-speechcraft/speechcraft",
+          "pathName": "pages/speechcraft/new-speechcraft/speechcraft",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "任务监控",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "com-navbar": "../../components/com-navbar/index",
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  }
+}

@@ -1,0 +1,182 @@
+page {
+  background-color: white;
+}
+
+.recharge-view {
+  width: 100%;
+  color: #333333;
+}
+
+.recharge-card {
+  margin: 30rpx 30rpx;
+  background-color: white;
+}
+
+
+.recharge-card .title {
+  font-size: 56rpx;
+  border-bottom: 1px solid #EEEEEE;
+  margin: 0 30rpx;
+  padding: 10rpx 0;
+  font-weight: bold;
+}
+
+.recharge-card .title-label {
+  font-size: 32rpx;
+  color: #999999;
+  padding: 10rpx 30rpx;
+}
+
+
+
+.recharge-card .value {
+  font-size: 50rpx;
+  padding: 20rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recharge-card .value .goods-item {
+  border: 4rpx solid #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20rpx;
+  width: 202rpx;
+  height: 160rpx;
+  color: #333333;
+  text-align: center;
+  position: relative;
+  margin: 10rpx;
+}
+
+.recharge-card .value .goods-item.check {
+  border: 4rpx solid #0DD3B0;
+  color: #0DD3B0;
+}
+
+.goods-item .goods-minute {
+  font-size: 46rpx;
+  padding: 5rpx;
+}
+
+.goods-item .num {
+  display: inline-block;
+}
+
+.goods-item .company {
+  font-size: 28rpx;
+  display: inline-block;
+}
+
+.goods-item .goods-money {
+  font-size: 34rpx;
+  padding: 10rpx;
+}
+
+.goods-item .check-item {
+  width: 46rpx;
+  height: 46rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: -webkit-linear-gradient(left top, transparent 50%, #0DD3B0 50%);
+  background: -moz-linear-gradient(left top, transparent 50%, #0DD3B0 50%);
+  background: -ms-linear-gradient(left top, transparent 50%, #0DD3B0 50%);
+  background: -o-linear-gradient(left top, transparent 50%, #0DD3B0 50%);
+  background: linear-gradient(left top, transparent 50%, #0DD3B0 50%);
+}
+
+.goods-item .check-item .icon {
+  color: white;
+  position: absolute;
+  bottom: -2rpx;
+  right: 4rpx;
+
+}
+
+.goods-item .check-item .icon image {
+  width: 20rpx;
+  height: 14rpx;
+}
+
+.goods-item .recommend-item {
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  top: -4rpx;
+  left: -4rpx;
+  background: -webkit-linear-gradient(right bottom, transparent 76%, #FA5151 20%);
+  background: -moz-linear-gradient(right bottom, transparent 76%, #FA5151 20%);
+  background: -ms-linear-gradient(right bottom, transparent 76%, #FA5151 20%);
+  background: -o-linear-gradient(right bottom, transparent 76%, #FA5151 20%);
+  background: linear-gradient(right bottom, transparent 76%, #FA5151 20%);
+
+  border-top-left-radius: 20rpx;
+}
+
+.goods-item .recommend-item .mask-ico {
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-linear-gradient(right bottom, transparent 50%, white 50%);
+  background: -moz-linear-gradient(right bottom, transparent 50%, white 50%);
+  background: -ms-linear-gradient(right bottom, transparent 50%, white 50%);
+  background: -o-linear-gradient(right bottom, transparent 50%, white 50%);
+  background: linear-gradient(right bottom, transparent 40%, white 50%);
+  border-top: 4rpx solid #EEEEEE;
+  border-left: 4rpx solid #EEEEEE;
+  border-top-left-radius: 20rpx;
+
+}
+
+.goods-item .recommend-item .mask-ico.ischeck {
+  border-top: 4rpx solid #0DD3B0;
+  border-left: 4rpx solid #0DD3B0;
+}
+
+.goods-item .recommend-item .icon-text {
+  position: absolute;
+  color: white;
+  transform: rotate(315deg);
+  -ms-transform: rotate(135deg);
+  /* IE 9 */
+  -moz-transform: rotate(315deg);
+  /* Firefox */
+  -webkit-transform: rotate(315deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(315deg);
+  font-size: 22rpx;
+  top: 10rpx;
+  left: 6rpx;
+}
+
+
+.goods-item .check-item .icon {
+  color: white;
+  position: absolute;
+  bottom: -2rpx;
+  right: 4rpx;
+}
+
+.goods-item .check-item .icon image {
+  width: 20rpx;
+  height: 14rpx;
+}
+
+
+.recharge-view .button-row {
+  padding: 40rpx 30rpx;
+}
+
+
+
+
+.recharge-view .button-row button {
+  color: white;
+  background-color: #0DD3B0 !important;
+  width: 100%;
+  padding: 20rpx 0;
+}

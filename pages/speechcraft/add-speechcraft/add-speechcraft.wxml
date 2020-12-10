@@ -1,0 +1,33 @@
+<view class="page-title">
+	<view class=" title-back">
+		<view class="title-back-icon"></view>
+		基本信息
+	</view>
+</view>
+<view class="input-row">
+	<view class="input-title">
+		<view class="red-icon">*</view>
+		话术名称
+	</view>
+	<view class="value-row">
+		<input class="weui-input"  data-name="title" minlength="6" auto-focus maxlength="30" bindblur="bindInputChange" placeholder="请填写话术名称" />
+	</view>
+</view>
+<view class="input-row">
+	<view class="input-title">
+		<view class="red-icon">*</view>
+		话术类型
+	</view>
+	<view class="value-row">
+		<picker bindchange="bindPickerChange" header-text="请选择话术类型" value="{{index}}" range-key="{{'typeName'}}"
+			range="{{array}}">
+			<view class="picker">
+				{{array[index].typeName || '请选择'}}
+			</view>
+		</picker>
+	</view>
+</view>
+<!-- 底部操作 -->
+<view class="bottom-nav ">
+	<button catchtap="nextFn">下一步</button>
+</view>

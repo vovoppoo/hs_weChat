@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "数据统计",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "com-navbar": "../../components/com-navbar/index",
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "nav-bar": "../../components/navbar/navbar"
+  }
+}

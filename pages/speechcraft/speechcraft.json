@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "话术配置",
+  "usingComponents": {
+    "com-navbar": "../../components/com-navbar/index",
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "com-menu": "../../components/com-menu/index"
+  }
+}

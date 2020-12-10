@@ -1,0 +1,124 @@
+<!-- 头部 -->
+<nav-bar navbar-data='{{navbarData}}' navbar-show-b="{{show_b}}"></nav-bar>
+<view class="backgroundimg" bindload="imgLoaded"
+  style="width:{{imageWidth}}px;height:{{imageHeight}}px;overflow: hidden;">
+  <image src="{{navbarData.address}}"
+    style="top: 0px;width:{{imageWidth}}px;position: absolute;height:{{imageHeight}}px" />
+</view>
+<view class="com-menu {{showView?'':'dis'}}" catchtap="exitFn">
+
+  <view class="image-item">
+    <view class="title">
+      请截图扫码添加客服微信
+    </view>
+    <image src="/style/iconfont/qr.png"></image>
+  </view>
+</view>
+
+<view class="head-box" style='padding-top: {{height}}px;'>
+  <view class="head-item">
+    <view class="head-item-img">
+      <view class="user-item-left">
+        <block wx:if="{{is_wxUserInfo}}">
+          <view class="item-image">
+            <image bindtap="preview_event" binderror="user_avatar_error" class="avatar"
+              src="{{wxUserInfo.avatarUrl || '/../../../style/images/default-user.png'}}" />
+          </view>
+          <view>
+            <text class="item-name name">{{wxUserInfo.nickName}}</text>
+
+          </view>
+          <!-- <view class="button-set" bindtap="navigation_event" data-url="/pages/index/index/set-page/set-page"
+            data-type="1" data-name="个人资料">
+            <image src="/../../../style/images/nav.png"></image>
+          </view> -->
+        </block>
+        <block wx:else>
+          <button plain="true" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权</button>
+        </block>
+
+      </view>
+      <view class="nav-row-view">
+        <view class="nav-row">
+          <view class="nav-item" data-url="/pages/user-wallet/user-wallet" data-type="1">
+            <view class="item-number" bindtap="get_data">
+              {{residueTime}}
+            </view>
+            <text>剩余分钟</text>
+          </view>
+          <view class="nav-item button" data-url="/pages/user-integral/user-integral" data-type="1">
+            <view class="button-cz" bindtap="navigation_event" data-url="/pages/index/index/recharge/recharge"
+              data-type="1" data-name="余额充值">
+              去充值
+            </view>
+
+          </view>
+        </view>
+      </view>
+      <view class="user-menu-view">
+        <view class="item-view">
+          <view class="item-row">
+
+            <view class="menu-item" bindtap="navigation_event"
+              data-url="/pages/index/index/recharge-record/recharge-record" data-type="1" data-name="资金记录">
+              <view>
+                <image src="/style/iconfont/money-list.png"></image>
+              </view>
+              <view>
+                资金记录
+              </view>
+            </view>
+            <!-- <view class="menu-item" bindtap="navigation_event" data-url="/pages/index/index/recharge/recharge"
+              data-type="1" data-name="我的消息"> -->
+            <view class="menu-item">
+              <view>
+                <image src="/style/iconfont/mis.png"></image>
+              </view>
+              <view>
+                我的消息
+              </view>
+            </view>
+            <view bindtap="goKfFn" class="menu-item">
+              <view>
+                <image src="/style/iconfont/kefu.png"></image>
+              </view>
+              <view>
+                联系客服
+              </view>
+            </view>
+          </view>
+          <view class="item-row">
+            <view class="menu-item">
+              <view>
+                <image src="/style/iconfont/install.png"></image>
+              </view>
+              <view>
+                设置
+              </view>
+            </view>
+            <view class="menu-item" catchtap="exitloginFn">
+              <view>
+                <!-- <image src="/../../../style/iconfont/yuyin_w33.png"></image> -->
+                <image src="/style/iconfont/exit.png"></image>
+              </view>
+              <view class="red">
+                退出登录
+              </view>
+            </view>
+            <view class="menu-item">
+            </view>
+          </view>
+
+
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+
+
+
+
+</view>

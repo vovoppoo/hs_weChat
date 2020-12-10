@@ -1,0 +1,54 @@
+.com-menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.com-menu .menu-view {
+  width: 100%;
+  padding-bottom: 15%;
+  margin: 0 80rpx;
+  margin-bottom: var(--iphonex-fix-bottom);
+}
+
+.com-menu .menu-view .input-view {
+  text-align: center;
+  padding: 10rpx 30rpx;
+  background-color: white;
+}
+
+.com-menu .menu-view .input-view .title {
+  padding: 20rpx 0;
+  font-weight: bold;
+}
+
+.com-menu .menu-view .input-row {
+  text-align: center;
+  padding: 10rpx 0;
+  margin: 0 10rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.menu-item.bottom {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.menu-item.bottom .button {
+  width: 50%;
+  padding: 20rpx 0;
+}
+
+
+.dis {
+  display: none !important;
+}

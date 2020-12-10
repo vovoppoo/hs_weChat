@@ -1,0 +1,114 @@
+
+var dateFormat = function (value, format) {
+  if (!value) {
+    return
+  }
+  if (value.toString().indexOf('0000') === 0) {
+    return
+  }
+  var date = value;
+  format = format ? format : 'yyyy-MM-dd hh:mm';
+  date = getDate(value);
+  if (isNaN(date) || date.toString().indexOf('nvalid') >= 0) {
+    var reg = getRegExp('-', 'g');
+    date = value.replace(reg, '/');
+    date = getDate(date);
+  }
+  var map = {
+    "M": date.getMonth() + 1, //月份
+    "d": date.getDate(), //日
+    "h": date.getHours(), //小时
+    "m": date.getMinutes(), //分
+    "s": date.getSeconds(), //秒
+    "q": Math.floor((date.getMonth() + 3) / 3), //季度
+    "S": date.getMilliseconds() //毫秒
+  };
+  var formatReg = getRegExp('([yMdhmsqS])+', 'g');
+  format = format.replace(formatReg, function (all, t) {
+    var v = map[t];
+    if (v !== undefined) {
+      if (all.length > 1) {
+        v = '0' + v;
+        v = v.substring(v.length - 2);
+      }
+      return v;
+    } else if (t === 'y') {
+      var yearO = date.getFullYear() + ''
+      return yearO.substring(4 - all.length);
+    }
+    return all;
+  });
+  return format;
+}
+var patrolStatus = function (value) {
+  var typeT = {
+    '1': '待提交审核',
+    '2': '待提交审核',
+    '3': '待审核',
+    '4': '审核通过',
+    '5': '审核不通过'
+  }
+  return typeT[value + ''] || '未知类型'
+}
+
+var tsskStatus = function (value) {
+  var typeT = {
+    '0': '未开始',
+    '1': '进行中',
+    '2': '暂停',
+    '3': '终止',
+    '4': '完成',
+  }
+  return typeT[value + ''] || '未知类型'
+}
+
+
+
+//role
+var roleStatus = function (value) {
+  var typeT = ['管理员', '单位负责人'];
+  return typeT[value] || '未知'
+}
+
+//设备巡查频率
+var patrolFrequency = function (value) {
+  if (!value) {
+    return '--'
+  }
+  var types = {
+    '0/0/0': '不需要',
+    '2/0/1': '每周1次',
+    '3/0/1': '每季度1次',
+    '4/0/1': '半月1次',
+    '5/0/1': '每月1次',
+    '6/0/1': '每半年1次',
+    '7/0/1': '每年1次'
+  }
+  for (var i = 0; i < 3; i++) {
+    var key = '1/1/' + (i + 1);
+    types[key] = '每日' + (i + 1) + '次';
+  }
+  for (var i = 1; i < 6; i++) {
+    var key = '1/' + (i + 1) + '/1';
+    types[key] = (i + 1) + '天1次'
+  }
+  return types[value] || '未知频率'
+}
+
+var riskStatus = function (value) {
+  var typeT = {
+    '1': '未处置',
+    '2': '处置中',
+    '3': '已处置'
+  }
+  return typeT[value + ''] || '未知'
+}
+
+module.exports = {
+  dateFormat: dateFormat,
+  patrolStatus: patrolStatus,
+  roleStatus: roleStatus,
+  patrolFrequency: patrolFrequency,
+  riskStatus: riskStatus,
+  tsskStatus: tsskStatus
+}

@@ -1,0 +1,79 @@
+{
+  "pages":[
+    "pages/login/login",
+    "pages/login/register/register",
+    "pages/login/retrieve/retrieve",
+    "pages/data-statistics/statistics",
+    "pages/index/index",
+    "pages/index/index/set-page/set-page",
+    "pages/index/index/recharge/recharge",
+    "pages/index/index/recharge-record/recharge-record",
+    "pages/speechcraft/speechcraft",
+    "pages/speechcraft/add-speechcraft/add-speechcraft",
+    "pages/speechcraft/add-template-list/add-template-list",
+    "pages/speechcraft/add-template-list/add-node/add-node",
+    "pages/speechcraft/import-speechcraft/import-speechcraft",
+    "pages/speechcraft/new-speechcraft/speechcraft",
+    "pages/task/task",
+    "pages/task/new-task/task",
+    "pages/task/add-page/add-task-page",
+    "pages/task/task-info/task-info",
+    "pages/task/task-info/task-info-list",
+    "pages/task/task-info/task-info-list-kh",
+    "pages/customer/customer",
+    "pages/customer/add/add-customer",
+    "pages/customer/add-list/add-list-customer",
+    "pages/customer/info/info-customer",
+    "pages/customer/info/add-record/add-record",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0DD3B0",
+    "navigationBarTitleText": "鲸呼智能CRM",
+    "navigationBarTextStyle":"white"
+    
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#C7CDD4",
+    "selectedColor": "#747477",
+    "backgroundColor": "#f2f5f7",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/data-statistics/statistics",
+        "text": "数据统计",
+        "iconPath": "style/iconfont/data_w.png",
+        "selectedIconPath": "style/iconfont/data_b.png"
+      },
+      {
+        "pagePath": "pages/speechcraft/new-speechcraft/speechcraft",
+        "text": "话术配置",
+        "iconPath": "style/iconfont/yuyin_w.png",
+        "selectedIconPath": "style/iconfont/yuyin_b.png"
+      },
+      {
+        "pagePath": "pages/task/new-task/task",
+        "text": "任务监控",
+        "iconPath": "style/iconfont/task_w.png",
+        "selectedIconPath": "style/iconfont/task_b.png"
+      },
+      {
+        "pagePath": "pages/customer/customer",
+        "text": "客户管理",
+        "iconPath": "style/iconfont/kh_w.png",
+        "selectedIconPath": "style/iconfont/kh_b.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "个人中心",
+        "iconPath": "style/iconfont/grzx_w.png",
+        "selectedIconPath": "style/iconfont/grzx_b.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

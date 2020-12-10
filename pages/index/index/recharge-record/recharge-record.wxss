@@ -1,0 +1,63 @@
+/* pages/index/index/recharge-record/recharge-record.wxss */
+.page-view {
+  width: 100%;
+  color: #333333;
+
+}
+
+.page-view image {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.page-view .title-row {
+  font-size: 32rpx;
+  padding: 10rpx 0;
+  text-align: center;
+}
+
+.page-view .records-row {
+  padding: 10rpx 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1rpx solid #F2F2F2;
+
+}
+
+.page-view .records-row .record-left {
+  display: flex;
+  padding: 10rpx;
+  align-items: center;
+  text-align: left;
+}
+
+
+.page-view .records-row .record-left .icon {
+  padding: 0 20rpx;
+}
+
+
+.record-left .info .label {
+  font-size: 34rpx;
+}
+
+.record-left .info .time {
+  font-size: 28rpx;
+  color: #CCCCCC;
+  padding-top: 10rpx;
+}
+
+.page-view .records-row .record-right {
+  padding: 20rpx 40rpx;
+  font-size: 40rpx;
+  display: flex;
+}
+
+
+
+.red {
+  color: #FA5151;
+}

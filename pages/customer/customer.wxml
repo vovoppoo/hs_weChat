@@ -1,0 +1,202 @@
+<!--logs.wxml-->
+<wxs module="customer" src="./customer.wxs"></wxs>
+<com-menu show-view="{{showMenu}}" menu-arr="{{menuArr}}" wx:key="index"></com-menu>
+<com-screen show-view="{{showScreen}}" padding-height="{{height}}" bind:buttonhandle="buttonhandle"
+	menu-arr="{{screenArr}}" wx:key="index">
+</com-screen>
+<nav-bar navbar-data='{{navbarData}}' navbar-show-b="{{show_b}}"></nav-bar>
+<!-- <view class="search-row pos" wx:if="{{showPOS}}" style="width:{{imageWidth}}px;top:{{height-16}}px;"
+	bindtap="showScreenFn">
+	<view class="search-p">关键字：
+		<view wx:for="{{searchLabelArr}}" wx:key="index" class="search-label">
+			{{item}}
+		</view>
+	</view>
+	<view id="searchButton" class="search-button" bindtap="showScreenFn">
+		<image src="/style/iconfont/sx-icon.png"></image>
+	</view>
+	<image class="backgroundimg2" src="{{navbarData.address}}" bindload="imgLoaded"
+		style="width:{{imageWidth}}px;height:{{imageHeight}}px" />
+</view> -->
+
+
+<view class="backgroundimg" style="width:{{imageWidth}}px;padding-top: {{height}}px;height:200rpx;overflow: hidden;">
+	<image src="{{navbarData.address}}" bindload="imgLoaded"
+		style="top: 0px;width:{{imageWidth}}px;position: absolute;height:{{imageHeight}}px" />
+</view>
+
+
+<view id="navbar" class='page-navbar' style='padding-top: {{height}}px;height:200rpx'>
+
+	<view class="navber-row">
+
+		<view class="left-menu">
+			<view class="search">
+				<view>
+					<image src="/style/iconfont/Vector-2.png"></image>
+				</view>
+				<input class="weui-input" placeholder="搜索客户名称" maxlength="20" bindinput="bindKeyInput" confirm-type="search"
+					bindconfirm="getList" data-label="customerName" />
+			</view>
+		</view>
+		<view class="button-item">
+			<view id="searchButton" class="search-button" bindtap="showScreenFn">
+				<block wx:if="{{searchLabelArr.length>0}}">
+					<image src="/style/iconfont/search-b.png"></image>
+				</block>
+				<block wx:else>
+					<image src="/style/iconfont/search-w.png"></image>
+				</block>
+			</view>
+			<view id="addButton" class="add-button dis-none" bindtap="showMenuFn">
+				<image src="/style/iconfont/add-button-main.png"></image>
+			</view>
+		</view>
+
+	</view>
+
+
+	<view class="menu">
+		<com-navbar to-mode="red" bindclick="navbarClick" width="5" nav-width="1" slider-width="130"
+			active-index="{{navbarIndex}}" tabs="{{navlist}}"></com-navbar>
+	</view>
+
+	<view wx:if="{{searchLabelArr.length>0}}" class="search-row" style="width:{{imageWidth}}px;" bindtap="showScreenFn">
+		<view class="search-p">关键字：
+			<view wx:for="{{searchLabelArr}}" wx:key="index" class="search-label">
+				{{item}}
+			</view>
+		</view>
+	</view>
+
+</view>
+<scroll-view scroll-y style="height: 100vh;"  bindrefresherrefresh="getList"
+	bindscrolltolower="bindscrolltolowerFn" refresher-background="#F5F5F9" refresher-enabled
+	refresher-triggered="{{refresherTriggered}}">
+	<!-- <view class="scroll-view-item" style='padding-top: {{height}}px;'> -->
+	<view class="scroll-view-item">
+
+		<view wx:if="{{searchLabelArr.length>0}}" style="height:60rpx">
+
+		</view>
+
+
+		<view class="mode-list" style="margin-bottom:{{height + 46}}px">
+
+			<block wx:if="{{dataList.length>0}}">
+				<block wx:for="{{dataList}}" wx:key="index">
+
+					<view class="mode-card" catchtap="{{customer.cloCard}}" bindtouchstart="{{customer.touchstart}}"
+						catchtouchend="{{customer.touchend}}">
+						<view class="right-button">
+							<view class="card-button-h" data-id="{{item.id}}" bindtap="goAddFn">
+								编辑
+							</view>
+							<view class="card-button-h red-color" data-name="{{item.customerName}}" data-id="{{item.id}}"
+								bindtap="goDeleteFn">
+								删除
+							</view>
+
+						</view>
+						<view class="card-view">
+
+							<view class="card-info" data-id="{{item.id}}" bindtap="goInfoFn">
+								<view class="info-left">
+									<view class="title">
+										{{item.customerName}} <text wx:if="{{item.customerPhone}}">{{item.customerPhone}}</text>
+										<view class="tag" wx:if="{{item.customerSex==1}}">
+											<image src="../../style/iconfont/Vector-1.png"></image>
+										</view>
+										<view class="tag" wx:if="{{item.customerSex==2}}">
+											<image src="../../style/iconfont/Vector.png"></image>
+										</view>
+									</view>
+									<view class="time">
+										<!-- <view class="task-num" wx:if="{{formSearch.type==1}}">
+											任务数: 20
+										</view> -->
+										<view class="tag-row">
+											<block wx:for="{{item.customerLabel}}" wx:key="index" wx:for-item="tagItem">
+												<view class="tag-item">
+													{{tagItem}}
+												</view>
+											</block>
+										</view>
+									</view>
+									<!-- <view wx:if="{{formSearch.type==1}}" class="time">
+										客户来源: 宝安碧海花园任务
+									</view> -->
+
+
+									<view class="time">
+										跟进时间: {{item.gmtCreate}}
+									</view>
+								</view>
+								<view class="info-right">
+									<view class="card-button">
+
+										<view wx:if="{{item.customerLevel}}" class="card-clo-button">
+											<button type="default" plain="true">{{item.customerLevel}}</button>
+										</view>
+
+									</view>
+									<view class="time">
+
+									</view>
+								</view>
+							</view>
+							<!-- <view class="progress">
+<view class="progress-box">
+	<view>
+		<progress percent="80" color="#10AEFF" active stroke-width="10" />
+	</view>
+	<view class="label">
+		50/50
+	</view>
+
+
+</view>
+<view class="tis">
+	<view class="bottom-row">
+		任务完成度
+	</view>
+	<view class="label">
+		80%
+	</view>
+
+</view>
+</view> -->
+						</view>
+
+					</view>
+				</block>
+			</block>
+			<block wx:else>
+				<view class="no-con">
+					<view>
+						<view class="icon">
+							<image src="/style/iconfont/tis.png"></image>
+						</view>
+						<view class="tis-row">
+							暂无客户数据。
+						</view>
+						<view class="tis-row" wx:if="{{formSearch.type==1}}">
+							请添加新的任务执行后可以加入客户列表
+						</view>
+						<view class="tis-row" wx:else>
+							请添加新的线索池客户
+						</view>
+					</view>
+				</view>
+
+			</block>
+
+		</view>
+
+
+	</view>
+</scroll-view>
+
+
+
+<wxs module="filter" src="./../../filter/filter.wxs"></wxs>

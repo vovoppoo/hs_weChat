@@ -1,0 +1,165 @@
+<view class='page-info-view'>
+  <view class="title-row">
+    <view class="left-view">
+      <view class="text">{{taskData.taskName}}</view>
+      <view class="text title-button {{switch2Checked?'':'red'}}">
+        {{filter.tsskStatus(taskData.status)}}
+      </view>
+    </view>
+    <view wx:if="{{taskData.status<3}}" class="right-view">
+      <switch checked="{{switch2Checked}}" data-status="{{switch2Checked}}" data-id="{{taskData.id}}"
+        bindchange="goChangeStatusFn" />
+    </view>
+  </view>
+  <view class="info-view">
+    <view class="info-row">
+      创建时间：{{filter.dateFormat(taskData.gmtCreate)}}
+    </view>
+    <view class="info-row">
+      话术模板：{{taskData.whisperingTitle}}
+    </view>
+    <view class="info-row">
+      拨打时间：{{taskData.taskTime}}
+    </view>
+    <view class="info-row">
+      拨打周规：{{taskData.taskTime}}
+    </view>
+  </view>
+
+</view>
+
+<view class=" khinfo">
+  <view class="title">
+    <view class=" title-back">
+      <view class="label">
+        任务数据
+      </view>
+      <view class="title-back-icon"></view>
+    </view>
+    <view class="button-go" bindtap="goListFn" data-type="th" data-url="/pages/task/task-info/task-info-list">
+      查看详情
+      <image src="../../../style/images/nav-b.png"></image>
+    </view>
+  </view>
+  <view class="info-view">
+    <view class="info-row">
+      <view class="info-item">
+        <view class="num">{{taskData.completeUserCount || 100}}</view>
+        <view>拨打量</view>
+      </view>
+      <view class="info-item">
+        <view class="num">{{jtCount || 100}}</view>
+        <view>接听量</view>
+      </view>
+      <view class="info-item">
+        <view class="num">{{taskData.callConnectionRate || 100}}</view>
+        <view>接听率(%)</view>
+      </view>
+    </view>
+    <!-- <view class="info-row">
+      <view class="info-item">
+        <view class="num">100</view>
+        <view>平均时长(秒)</view>
+      </view>
+      <view class="info-item">
+        <view class="num">100</view>
+        <view>转接量</view>
+      </view>
+      <view class="info-item">
+        <view class="num">100</view>
+        <view>转接量(%)</view>
+      </view>
+    </view> -->
+  </view>
+
+</view>
+
+<view class=" kh-table-info">
+  <view class="title title-back">
+    <view class="label">
+      客户等级设置:
+    </view>
+    <view class="title-back-icon" style="left:-10rpx"></view>
+  </view>
+  <view class="table-view">
+    <view class="table-row">
+      <view class="table-item grey">
+        <view class="label">客户级别</view>
+      </view>
+      <view class="table-item grey">
+        <view class="label">命中关键字</view>
+      </view>
+      <view class="table-item grey">
+        <view class="label">通话轮次</view>
+      </view>
+      <view class="table-item grey">
+        <view class="label">通话时长</view>
+      </view>
+    </view>
+    <view class="table-row">
+      <view class="table-item">
+        <view class="label">A</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.validKeyNumA}}</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.callNumA}}</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.callTimeA}}s</view>
+      </view>
+    </view>
+    <view class="table-row">
+      <view class="table-item">
+        <view class="label">B</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.validKeyNumA}}</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.callNumC}}</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.callTimeC}}s</view>
+      </view>
+    </view>
+    <view class="table-row">
+      <view class="table-item">
+        <view class="label">C</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.validKeyNumB}}</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.callNumB}}</view>
+      </view>
+      <view class="table-item">
+        <view class="label">{{taskData.callTimeB}}s</view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+
+
+
+<view class="container circular{">
+  <view class="title">
+    <view class=" title-back" style="padding-left:30rpx">
+      <view class="label">
+        客户等级占比
+      </view>
+      <view class="title-back-icon" style="left:20rpx"></view>
+    </view>
+    <view class="button-go" bindtap="goListFn" data-type="kh" data-url="/pages/task/task-info/task-info-list"
+      style="padding-right:30rpx">
+      查看详情
+      <image src="../../../style/images/nav-b.png"></image>
+    </view>
+  </view>
+  <ec-canvas id="mychart-dom-multi-bar" canvas-id="mychart-multi-bar" ec="{{ ecCircular }}"></ec-canvas>
+</view>
+<wxs module="filter" src="./../../../filter/filter.wxs"></wxs>

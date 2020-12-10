@@ -1,0 +1,44 @@
+<View class="recharge-view">
+  <view class="recharge-card">
+    <view class="title-label">
+      账户:
+    </view>
+    <view class="title">
+      {{userName}}
+    </view>
+    <view class="value">
+      <block wx:for="{{goodsDate}}" wx:key="index">
+        <view class="goods-item {{item.isCheck?'check':''}}" bindtap="selectGoddsFn" data-index="{{index}}">
+          <view>
+            <view class="goods-minute">
+              <view class="num">{{item.minuteCount}}</view>
+              <view class="company">分钟</view>
+            </view>
+            <view class="goods-money">
+              <view class="num">{{item.money}}</view>
+              <view class="company">元</view>
+            </view>
+          </view>
+          <view class="check-item" wx:if="{{item.isCheck}}">
+            <view class="icon">
+              <image src="/style/iconfont/gou.png"></image>
+            </view>
+          </view>
+          <view class="recommend-item" wx:if="{{item.isRecommend}}">
+            <view class="mask-ico {{item.isCheck?'ischeck':''}} ">
+
+            </view>
+            <view class="icon-text">
+              推荐
+            </view>
+          </view>
+        </view>
+      </block>
+
+
+    </view>
+  </view>
+  <view class="button-row">
+    <button catchtap="nextFn">￥{{money}}.00 立即支付</button>
+  </view>
+</View>

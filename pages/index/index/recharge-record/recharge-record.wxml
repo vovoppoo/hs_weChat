@@ -1,0 +1,35 @@
+<view class="page-view">
+  <view wx:for="{{dataList}}" wx:key="{{index}}" class="month-records-view">
+    <view class="title-row">
+      {{item.month}}
+    </view>
+    <view wx:for="{{item.monthList}}" wx:key="index" wx:for-item="itemsub" class="records-row">
+      <view class="record-left">
+        <view wx:if="{{itemsub.type===1}}" class="icon">
+          <image src="../../../../style/iconfont/Frame-6.png"></image>
+        </view>
+        <view wx:else class="icon">
+          <image src="../../../../style/iconfont/Frame-5.png"></image>
+        </view>
+        <view class="info">
+          <view class="label">
+            {{itemsub.label}}
+          </view>
+          <view class="time">
+            {{itemsub.time}}
+          </view>
+        </view>
+
+      </view>
+      <view class="record-right {{itemsub.type===1? 'red':''}}">
+        <view wx:if="{{itemsub.type===1}}">
+          +
+        </view>
+        <view wx:else>
+          -
+        </view> {{itemsub.money}}
+      </view>
+    </view>
+  </view>
+
+</view>

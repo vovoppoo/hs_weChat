@@ -1,0 +1,43 @@
+<view class="main-page">
+	<view class="login-view">
+
+		<view class="title-row">
+			<!-- 密码找回 -->
+		</view>
+
+		<block wx:if="{{isEdit}}">
+
+			<view class="input-row">
+				<input class="weui-input" type="password" data-name="password" minlength="6" maxlength="20"
+					bindblur="bindInputChange" placeholder="密码 6-20字母、数字组合" />
+			</view>
+			<view class="input-row">
+				<input class="weui-input" type="password" data-name="platformPassword" maxlength="20" bindblur="bindInputChange"
+					placeholder="确认密码" />
+			</view>
+		</block>
+		<block wx:else>
+			<view class="input-row">
+				<view class="phone-button">
+					<!-- <button plain open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> -->
+						<input class="weui-input" data-name="account" type="number" value="{{account}}" maxlength="20"
+							bindinput="bindInputChange" placeholder="手机号/账号" />
+					<!-- </button> -->
+				</view>
+			</view>
+			<view class="input-row flex ">
+				<input class="weui-input" data-name="captcha" type="number" maxlength="20" bindinput="bindInputChange"
+					placeholder="请输入短信验证码" />
+				<view class="button {{buttonText!=='获取验证码'?'hei':'bai'}}">
+					<button catchtap="getCaptchaFn">{{buttonText}}</button>
+				</view>
+			</view>
+		</block>
+
+
+		<view class="button-row">
+			<button catchtap="goRetrieveFn">{{gobuttonText}}</button>
+		</view>
+	</view>
+
+</view>

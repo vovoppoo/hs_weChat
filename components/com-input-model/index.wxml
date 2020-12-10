@@ -1,0 +1,26 @@
+<view class="com-menu {{showView?'':'dis'}}" catchtap="exitFn">
+  <view class="menu-view">
+
+    <view class="input-view">
+      <view class="title">
+        {{menuArr.title}}
+      </view>
+      <view class="input-row">
+        <input maxlength="20" data-name="name" value="{{menuArr.name}}" maxlength="20" catchtap="tapFn" bindblur="bindInputChange"
+								placeholder="请输入" />
+      </view>
+
+
+    </view>
+
+    <view class="menu-item bottom" >
+      <view class="button" bindtap="exitFn">
+        取消
+      </view>
+      <view class="button" bindtap="confirmFn">
+        确定
+      </view>
+    </view>
+  </view>
+
+</view>

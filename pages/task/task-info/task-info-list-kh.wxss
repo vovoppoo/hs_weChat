@@ -1,0 +1,284 @@
+.page-navbar {
+  height: 180rpx;
+  background-color: #0DD3B0;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.page-navbar .add-button {
+  position: absolute;
+  right: 30rpx;
+  top: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid white;
+  border-radius: 50rpx;
+  font-size: 44rpx;
+  text-align: center;
+  line-height: 37rpx;
+  color: white;
+}
+
+.page-navbar .left-menu {
+  width: 88%;
+  position: relative;
+  padding-bottom: 60rpx;
+}
+
+.page-navbar .left-menu .search {
+  margin: 20rpx;
+  background-color: white;
+  border: 1rpx solid #0DD3B0;
+  padding: 5rpx 20rpx;
+  border-radius: 15rpx;
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+}
+
+
+.page-navbar .left-menu input {
+  width: 100%;
+}
+
+.left-menu .search .icon {
+  height: 34rpx;
+  padding-right: 10rpx;
+}
+
+
+.page-navbar .left-menu .search image {
+  width: 34rpx;
+  height: 34rpx;
+
+}
+
+.left-menu .search-selet {
+  position: absolute;
+  background-color: white;
+  width: 83%;
+  left: 41rpx;
+  bottom: -14px;
+}
+
+.page-navbar .right-menu {
+  display: flex;
+  padding-bottom: 10rpx;
+  width: 100%;
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+}
+
+.page-navbar .right-menu .section {
+  border-radius: 50rpx;
+  width: 170rpx;
+  height: 52rpx;
+  border: 1rpx solid #0DD3B0;
+  margin-right: 20rpx;
+  text-align: center;
+  margin: 0 20rpx 10rpx 0;
+  color: white;
+}
+
+
+.page-navbar .right-menu .section .picker {
+  width: 150rpx;
+  height: 52rpx;
+  font-size: 28rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picker .icon {
+  transform: rotate(180deg);
+  display: inline-block;
+  height: 34rpx;
+  font-size: 22rpx;
+  padding-right: 10rpx;
+}
+
+.mode-list {
+  width: 100%;
+  color: #6A6A6A;
+}
+
+.mode-list .mode-card {
+  background-color: white;
+  margin: 20rpx 40rpx;
+  padding: 30rpx 30rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid white;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-card .right-button {
+  position: absolute;
+  right: -150rpx;
+  top: 0rpx;
+  height: 100%;
+  width: 150rpx;
+  display: flex;
+  text-align: center;
+}
+
+.right-button .card-button-h {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #999999;
+  width: 100%;
+  color: white;
+  font-size: 30rpx;
+}
+
+
+.mode-list .mode-card .card-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10rpx;
+}
+
+.mode-list .mode-card .card-info .title {
+  font-weight: bold;
+  height: 42rpx;
+  color: black;
+  padding-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.mode-list .mode-card .card-info .title>view {
+  padding-right: 10rpx;
+}
+
+.mode-list .mode-card .card-info image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.mode-list .mode-card .card-info .time {
+  padding-top: 20rpx;
+  font-size: 26rpx;
+  display: flex;
+}
+
+.mode-list .mode-card .card-info .time>view {
+  padding-right: 16rpx;
+}
+
+
+.card-info .info-right .card-button {
+  display: flex;
+  justify-content: flex-end;
+  height: 42rpx;
+  align-items: center;
+}
+
+.card-info .info-right .card-button button {
+  width: 100rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  padding: 0;
+  color: white;
+  background-color: #0ED3B0;
+  border-color: #0ED3B0;
+  border-radius: 30rpx;
+  margin: 0 10rpx;
+}
+
+.card-info .info-right .card-button .green button {
+  background-color: #07C160;
+  border-color: #07C160;
+}
+
+.card-info .info-right .card-button .red button {
+  background-color: #FA5151;
+  border-color: #FA5151;
+}
+
+.card-info .info-right .card-button .yellow button {
+  background-color: #FFC66A;
+  border-color: #FFC66A;
+}
+
+.card-info .info-right .card-button .grey button {
+  background-color: #999999;
+  border-color: #999999;
+}
+
+
+
+.card-info .info-right .card-button .card-clo-button button {
+  width: 80rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  padding: 0;
+  color: #FF0000;
+  border-color: #FF0000;
+  border-radius: 30rpx;
+  margin-left: 10rpx;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress .label {
+  padding-bottom: 2rpx;
+  color: black;
+  font-size: 28rpx;
+}
+
+.progress progress {
+  margin-top: 16rpx;
+  border-radius: 20px;
+
+  border: 1px solid #87E9D7;
+}
+
+.progress .bottom-row {
+  font-size: 24rpx;
+  margin-top: 14rpx;
+  display: flex;
+  align-items: center;
+  height: 27rpx;
+  justify-content: flex-end;
+}
+
+
+
+.progress .progress-box {
+  width: 75%;
+}
+
+.progress .tis {
+  width: 25%;
+  text-align: right;
+}
+
+.task-title {
+  background-color: white;
+  width: 100%;
+  padding: 20rpx 30rpx;
+  color: #333333;
+  margin-bottom: 40rpx;
+}
+
+.task-title .label {
+  color: #999999;
+}
+
+.task-title>view {
+  display: inline-block;
+}

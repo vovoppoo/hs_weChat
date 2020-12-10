@@ -1,0 +1,53 @@
+
+
+var showState = false
+
+var bindtapFn = function (e, instance) {
+  console.log(JSON.stringify(e), 'bindtouchstart，携带值为2')
+  var dataset = e.instance.getDataset()
+  var st = e.instance.getState()
+
+  if (showState) {
+    e.instance.addClass('dis-none')
+    showState = false
+  } else {
+    e.instance.removeClass('dis-none')
+    showState = true
+  }
+}
+
+var startX = 0
+
+var bindtouchstart = function (e, instance) {
+  var dataset = e.instance.getDataset()
+  var st = e.instance.getState()
+  startX = e.changedTouches[0].pageX
+
+
+}
+var bindtouchend = function (e, instance) {
+  console.log(JSON.stringify(e), 'bindtouchstart，携带值为2', startX)
+  var dataset = e.instance.getDataset()
+  var st = e.instance.getState()
+  var move = startX - e.changedTouches[0].pageX
+
+  if (move > 30) {
+    e.instance.setStyle({
+      left: '-150' + 'rpx',
+      overflow: 'visible !important'
+    })
+  } else if (move < -30) {
+    e.instance.setStyle({
+      left: '0' + 'rpx',
+      overflow: 'hidden'
+    })
+  }
+
+}
+
+
+module.exports = {
+  showMenuFn: bindtapFn,
+  touchstart: bindtouchstart,
+  touchend: bindtouchend
+} 

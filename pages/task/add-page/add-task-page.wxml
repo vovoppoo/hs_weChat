@@ -1,0 +1,288 @@
+<!--pages/customer/add/add-customer.wxml-->
+<view class="mark-view" wx:if="{{showModel}}">
+	<view class="con-view">
+		<view class="title">添加时间模板</view>
+		<view class="input-item">
+			<view class="label">模板名称</view>
+			<input class="weui-input" data-name="labelName" maxlength="20" bindblur="bindInputChange" placeholder="请填写模板名" />
+		</view>
+		<view class="input-item">
+			<view class="label">周呼叫时间</view>
+			<view class="value-view">
+				<block wx:for="{{weekArr}}" wx:key="index">
+					<view class="tag-button nan {{item.is? 'is':''}}" data-index="{{index}}" bindtap="selectweekFn">
+						{{item.name}}
+					</view>
+				</block>
+			</view>
+		</view>
+		<view class="input-item">
+			<view class="label">日呼叫时间</view>
+			<view class="value-view">
+				<view class="time-row">
+					<view class="text">
+						上午:
+					</view>
+					<picker mode="time" value="{{am_start_time}}" data-type="1" data-name="am_start_time"
+						data-changeName="am_end_time" start="08:00" end="11:59" bindchange="bindTimeChange">
+						<view class="picker">
+							{{am_start_time}}
+						</view>
+					</picker>
+					<view class="text">
+						至
+					</view>
+					<picker mode="time" value="{{am_end_time}}" data-type="2" data-name="am_end_time"
+						data-changeName="am_start_time" start="08:00" end="11:59" bindchange="bindTimeChange">
+						<view class="picker">
+							{{am_end_time}}
+						</view>
+					</picker>
+				</view>
+				<view class="time-row">
+					<view class="text">
+						下午:
+					</view>
+					<picker mode="time" value="{{pm_start_time}}" data-type="1" data-name="pm_start_time"
+						data-changeName="pm_end_time" start="12:00" end="20:59" bindchange="bindTimeChange">
+						<view class="picker">
+							{{pm_start_time}}
+						</view>
+					</picker>
+					<view class="text">
+						至
+					</view>
+					<picker mode="time" value="{{pm_end_time}}" data-type="2" data-name="pm_end_time"
+						data-changeName="pm_start_time" start="12:00" end="20:59" bindchange="bindTimeChange">
+						<view class="picker">
+							{{pm_end_time}}
+						</view>
+					</picker>
+				</view>
+
+			</view>
+		</view>
+		<view class="input-item">
+			<view class="label">
+				<view>
+					排除日期
+				</view>
+				<view class="select-p">
+					<picker mode="date" value="{{date}}" bindchange="bindDateChange">
+						<view class="picker">
+							{{date}}
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="value-view">
+				<block wx:for="{{pcDateArr}}" wx:key="index">
+					<view class="tag-button data-tag is" data-index="{{index}}" bindtap="selectweekFn">
+						{{item}}
+					</view>
+				</block>
+			</view>
+		</view>
+
+		<view class="button-row">
+			<view class="button-item" bindtap="showModelFn">
+				取消
+			</view>
+			<view class="button-item qd" bindtap="addTagFn">
+				确定
+			</view>
+		</view>
+	</view>
+</view>
+<view class="title-row">
+	<view class="title-back">
+		<view class="title-back-icon">
+
+		</view>
+		<view>
+			任务信息
+		</view>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			任务名称
+		</view>
+
+	</view>
+	<view class="input-item">
+		<input class="weui-input" data-name="name" value="{{name}}" maxlength="20" bindblur="bindInputChange"
+			placeholder="任务名称" />
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			客户选择
+		</view>
+	</view>
+	<view class="input-item">
+		<view class="title">
+			<view>客户列表</view>
+			<view class="tis">(按客户等级选择)</view>
+		</view>
+		<view class="tag-row ">
+			<block wx:for="{{levelArr}}" wx:key="index">
+				<view class="tag-button nan {{item.is? 'is':''}}" data-type="2" data-name="levelArr" data-index="{{index}}"
+					bindtap="selectLevelFn">
+					<view>{{item.name}}</view>
+				</view>
+			</block>
+		</view>
+		<view class="title">
+			线索池列表
+			<view class="tis">(按客户标签选择)</view>
+		</view>
+		<view class="tag-row">
+			<block wx:for="{{tagLabelArr}}" wx:key="index">
+				<view class="tag-button nan {{item.is? 'is':''}}" data-type="1" data-name="tagLabelArr" data-index="{{index}}"
+					bindtap="selectLevelFn">
+					<view>{{item.label}}</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			话术选择
+		</view>
+	</view>
+	<view class="input-item hs">
+		<picker mode="multiSelector" bindchange="bindMultiPickerChange" data-tzId="tzIdKD" data-tzName="tzNameKD"
+			data-valueArr="multiIndexKD" data-name="tzTypeKD" range-key="title" bindcolumnchange="bindMultiPickerColumnChange"
+			value="{{multiIndexKD}}" range="{{multiArray}}">
+			<view wx:if="{{tzNameKD==='请选择话术'}}" class="picker">
+				{{tzNameKD}}
+			</view>
+			<view wx:else >
+				{{tzNameKD}}
+			</view>
+		</picker>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			客户等级条件限制
+		</view>
+	</view>
+	<view class="input-item">
+		<view class="tabel-view">
+			<view class="tabel-row">
+				<view wx:for="{{titleArr}}" wx:key="index" class="tabel-title">
+					{{item}}
+				</view>
+			</view>
+			<view class="tabel-row">
+				<view wx:for="{{titleArrA}}" class="tabel-value" wx:key="index">
+					<block wx:if="{{index>0}}">
+						<input class="weui-input" data-name="titleArrA" data-index="{{index}}" maxlength="20"
+							bindblur="bindInputArrChange" value="{{item}}" placeholder="请填写" />
+					</block>
+					<block wx:else>
+						{{item}}
+					</block>
+				</view>
+			</view>
+			<view class="tabel-row">
+
+				<view wx:for="{{titleArrB}}" class="tabel-value" wx:key="index">
+					<block wx:if="{{index>0}}">
+						<input class="weui-input" data-name="titleArrB" data-index="{{index}}" maxlength="20"
+							bindblur="bindInputArrChange" value="{{item}}" placeholder="请填写" />
+					</block>
+					<block wx:else>
+						{{item}}
+					</block>
+				</view>
+
+			</view>
+			<view class="tabel-row">
+
+				<view wx:for="{{titleArrC}}" class="tabel-value" wx:key="index">
+					<block wx:if="{{index>0}}">
+						<input class="weui-input" data-name="titleArrC" data-index="{{index}}" maxlength="20"
+							bindblur="bindInputArrChange" value="{{item}}" placeholder="请填写" />
+					</block>
+					<block wx:else>
+						{{item}}
+					</block>
+				</view>
+
+			</view>
+		</view>
+		<view class="tis-view">
+			备注：满足级别条件的,将标记为该等级客户,同时满足多个等级的,优先级为A>B>C
+		</view>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			启动方式
+		</view>
+	</view>
+	<view class="input-item">
+		<view class="tag-row">
+			<view class="tag-button nan {{!startT? 'is':''}}" bindtap="selectStartTFn">
+				<view>立即启动</view>
+			</view>
+			<view class="tag-button nan {{startT? 'is':''}}" bindtap="selectStartTFn">
+				<view>定时启动</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{startT}}" class="input-item">
+		<view class="time-row">
+			<view> 定时启动时间：</view>
+			<picker mode="date" value="{{date}}" data-name="date" start="{{nowDate}}" end="2200-09-01"
+				bindchange="bindInputChange">
+				<view class="picker">
+					{{date}}
+				</view>
+			</picker>
+			<picker mode="time" value="{{time}}" start="08:01" end="20:59" bindchange="bindStartTimeChange">
+				<view class="picker">
+					{{time}}
+				</view>
+			</picker>
+		</view>
+	</view>
+</view>
+
+
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			时间模板设置
+		</view>
+		<view class="add-tag" bindtap="showModelFn">添加模板</view>
+	</view>
+	<view class="input-item tag-row">
+		<block wx:for="{{tagArr}}" wx:key="index">
+			<view class="tag-button  {{item.on}}" data-index="{{index}}" bindtap="selectTagFn">
+				<view>{{item.template_name}}</view>
+			</view>
+		</block>
+
+	</view>
+</view>
+<view class="input-row">
+	<view class="button" bindtap="submitFn">
+		提 交
+	</view>
+</view>

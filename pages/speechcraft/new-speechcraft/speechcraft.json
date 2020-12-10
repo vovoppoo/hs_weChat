@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "话术配置",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "com-navbar": "../../../components/com-navbar/index",
+    "com-menu": "../../../components/com-menu/index",
+    "com-screen": "../../../components/com-screen/index",
+    "nav-bar": "../../../components/navbar/navbar"
+  }
+}

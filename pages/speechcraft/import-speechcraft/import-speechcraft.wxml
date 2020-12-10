@@ -1,0 +1,66 @@
+<view class='page-navbar' bindtap="closeMenu">
+	<view class="left-menu">
+		<view class="search">
+			<input class="weui-input" placeholder="搜索话术名称" auto-focus maxlength="20" bindinput="bindKeyInput" data-label="taskName" />
+		</view>
+	</view>
+
+	<view class="search-button">
+		<button type="default" plain="true">搜索</button>
+	</view>
+
+</view>
+<view class="mode-list" bindtap="closeMenu">
+	<checkbox-group bindchange="checkboxChange">
+		<block wx:for="{{dataList}}" wx:key="index">
+			<view class="mode-card">
+				<view style="width:100%">
+					<view class="card-info">
+						<view class="info-left">
+							<view class="title">
+								房产目标
+							</view>
+							<view class="time">
+								创建时间:2050.5.10
+							</view>
+						</view>
+						<view class="info-right">
+					
+						</view>
+					</view>
+					<!-- <view class="progress">
+						<view class="progress-box">
+							<view class="label">
+								50/50
+							</view>
+							<view>
+								<progress percent="80" color="#10AEFF" active stroke-width="10" />
+							</view>
+
+						</view>
+						<view class="tis">
+							<view class="label">
+								80%
+							</view>
+							<view class="bottom-row">
+								录音完成度
+							</view>
+						</view>
+					</view> -->
+				</view>
+
+				<view class="card-button">
+						<checkbox value="{{item.id}}" checked="{{item.checked}}" />
+				</view>
+			</view>
+		</block>
+	</checkbox-group>
+</view>
+
+<!-- 底部操作 -->
+<view class="bottom-nav ">
+ <button catchtap="importFn">确认导入</button>
+ <button class="info" catchtap="backFn">取消</button>
+</view>
+
+<wxs module="filter" src="./../../../filter/filter.wxs"></wxs>

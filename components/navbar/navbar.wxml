@@ -1,0 +1,30 @@
+
+
+<view class='nav-wrap' style='height: {{height*1.5 + 20}}px;'>
+  <!-- 导航栏背景图片 -->
+  <image class="backgroundimg" src="{{navbarData.address}}" bindload="imgLoaded" style="width:{{imageWidth}}px;height:{{imageHeight}}px" />
+  <!-- // 导航栏 中间的标题 -->
+  <view class='nav-title' wx:if='{{!navbarData.white}}' style='line-height: {{height*2 + 44}}px;'>
+    {{navbarData.title}}
+  </view>
+  <view class='nav-title' wx:else='{{!navbarData.white}}' style='line-height: {{height*2 + 44}}px; color:#ffffff'>
+    {{navbarData.title}}
+  </view>
+  <view style='display: flex; justify-content: space-around;flex-direction: column'>
+    <!-- // 导航栏  左上角的返回按钮 -->
+    <!-- //  其中wx:if='{{navbarData.showCapsule}}' 是控制左上角按钮的显示隐藏，首页不显示 -->
+    <view class='nav-capsule' style='height: {{height*2 + 44}}px;' wx:if='{{navbarData.showCapsule}}'>
+      <!-- //左上角的返回按钮，wx:if='{{!share}}'空制返回按钮显示 -->
+      <!-- //从分享进入小程序时 返回上一级按钮不应该存在 -->
+      <!-- navbarData.white是控制按钮颜色的，因为背景有深浅色,返回按钮自己找图片 -->
+      <view bindtap='_navback' wx:if='{{!share&&navbarData.white}}'>
+        <image src='../../style/iconfont/back-w.png' mode='aspectFit' class='back-pre'></image>
+      </view>
+      <view bindtap='_navback' wx:else='{{!share}}'>
+        <image src='../../style/iconfont/back-w.png' mode='aspectFit' class='back-pre'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 导航栏下面的背景图片 -->
+<!-- <image class="backgroundimg" src="{{navbarData.address}}" bindload="imgLoaded" style="width:{{imageWidth}}px;height:{{imageHeight}}px" /> -->

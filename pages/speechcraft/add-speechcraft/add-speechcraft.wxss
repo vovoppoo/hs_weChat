@@ -1,0 +1,43 @@
+/* pages/speechcraft/add-speechcraft/add-speechcraft.wxss */
+
+page {
+  background-color: white;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 40rpx;
+  padding: 40rpx 20rpx 20rpx;
+}
+
+.input-row {
+  padding: 20rpx;
+  color: #6A6A6A;
+}
+
+.input-row .input-title {
+  font-size: 32rpx;
+  padding: 0 10rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.input-row .input-title .red-icon {
+  color: tomato;
+  display: inline-block;
+}
+
+.input-row .value-row {
+  height: 60rpx;
+  padding: 10rpx 20rpx 0;
+  background-color: white;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+
+.input-row .value-row .picker {
+  height: 60rpx;
+}
+
+.title-back .title-back-icon {
+  z-index: -1;
+}

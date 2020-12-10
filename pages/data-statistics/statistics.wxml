@@ -1,0 +1,67 @@
+<nav-bar navbar-data='{{navbarData}}' navbar-show-b="{{show_b}}"></nav-bar>
+<view class="backgroundimg" style="width:{{imageWidth}}px;padding-top: {{height}}px;height:240rpx;overflow: hidden;">
+	<image src="{{navbarData.address}}" bindload="imgLoaded" style="width:{{imageWidth}}px;" />
+</view>
+<view class='page-navbar' style='padding-top: {{height}}px;'>
+	<view class="left-menu">
+		<com-navbar to-mode="red" bindclick="navbarClick" width="5" nav-width="2" slider-width="46"
+			active-index="{{navbarIndex}}" tabs="{{navlist}}"></com-navbar>
+	</view>
+	<view class="right-menu">
+		<view class="section">
+			<picker bindchange="bindPickerChange" value="{{array.value}}" range-key="{{'name'}}" range="{{array}}">
+				<view class="picker">
+					{{array[index].name}}
+				</view>
+			</picker>
+		</view>
+	</view>
+
+
+	<view class="container info" style="top:{{height+50}}px">
+		<view class="title">任务数据</view>
+		<view class="info-view">
+			<view class="info-row">
+				<view class="info-item">
+					<view class="num">100</view>
+					<view>拨打量</view>
+				</view>
+				<view class="info-item">
+					<view class="num">100</view>
+					<view>接听量</view>
+				</view>
+				<view class="info-item">
+					<view class="num">100%</view>
+					<view>接听率</view>
+				</view>
+			</view>
+			<!-- <view class="info-row">
+				<view class="info-item">
+					<view class="num">100</view>
+					<view>平均时长</view>
+				</view>
+				<view class="info-item">
+					<view class="num">100</view>
+					<view>转接量</view>
+				</view>
+				<view class="info-item">
+					<view class="num">100%</view>
+					<view>转接率</view>
+				</view>
+			</view> -->
+		</view>
+
+	</view>
+
+	<view class="container tb" style="top:{{height+130}}px">
+		<view class="title">任务数据</view>
+		<ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+	</view>
+	<view class="container tb circular" style="top:{{height+320}}px">
+		<view class="title">客户占比</view>
+		<ec-canvas id="mychart-dom-circular" canvas-id="mychart-circular" ec="{{ ecCircular }}"></ec-canvas>
+	</view>
+</view>
+
+
+<wxs module="filter" src="./../../filter/filter.wxs"></wxs>

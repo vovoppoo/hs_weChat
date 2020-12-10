@@ -1,0 +1,29 @@
+<view class="com-menu {{showView?'':'dis'}}" catchtap="exitFn">
+
+
+</view>
+<view class="screen-view {{showView?'':'dis-con'}}" style="padding-top:{{paddingHeight}}px">
+  <view wx:for="{{menuArr}}" wx:key="id" class="screen-item">
+    <view class="item-title">
+      {{item.name}}
+    </view>
+    <view class="item-con">
+      <view wx:for="{{item.labelArr}}" wx:key="index" data-value="{{labelItem.value}}" data-index="{{index}}"
+        catchtap="cilckFn" data-indexId="{{item.id}}" wx:for-item="labelItem" data-isSelect="{{labelItem.isSelect}}"
+        class="item-con-button {{labelItem.isSelect?'is-on':''}}">
+        {{labelItem.name}}
+        <view class="is-on-icon" wx:if="{{labelItem.isSelect}}">
+          <view class="icon">x</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="button-row">
+    <view class="button left" catchtap="resetFn" >
+      重置
+    </view>
+    <view class="button right" catchtap="exitFn">
+      确定
+    </view>
+  </view>
+</view>

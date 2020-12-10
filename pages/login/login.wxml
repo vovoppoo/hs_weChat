@@ -1,0 +1,54 @@
+<!--pages/login/login.wxml-->
+<view class="main-page">
+	<view class="login-view">
+		<view class="logo-row">
+			<image src="/style/iconfont/logo.png"></image>
+		</view>
+		<!-- <view class="title-row">
+			登录
+		</view> -->
+		<block wx:if="{{loginState=='account'}}">
+			<view class="input-row">
+				<input class="weui-input" data-name="account" maxlength="20" bindinput="bindInputChange" placeholder="手机号/账号" />
+			</view>
+			<view class="input-row">
+				<input class="weui-input" type="password" data-name="password" maxlength="20" bindinput="bindInputChange"
+					placeholder="密码" />
+				<view bindtap="nextRetrieveFn" class="retrieve-button">
+					忘记密码
+				</view>
+			</view>
+			<view class="button-row">
+				<button catchtap="nextLoginFn">登 录</button>
+			</view>
+			<view class="button-row text">
+				<view class="text-button" catchtap="nextWXLoginFn">返回微信登录</view>
+			</view>
+
+		</block>
+		<block wx:if="{{loginState=='wx'}}">
+			<view class="button-row">
+				<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" >微信一键登录</button>
+			</view>
+			<view class="button-row text">
+				<view class="text-button" catchtap="nextAccountLoginFn">账号密码登录</view>
+			</view>
+		</block>
+
+
+		<view class="login-foot">
+			<view class="foot-left">
+				登录即代表同意
+				<view class="cilck-color">
+					《用户服务协议》
+				</view>
+
+			</view>
+			<view catchtap="nextRegisterFn" class="foot-right">
+				注册
+			</view>
+		</view>
+
+	</view>
+
+</view>

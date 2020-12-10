@@ -1,0 +1,147 @@
+<!--pages/customer/add/add-customer.wxml-->
+<view class="mark-view" wx:if="{{showModel}}">
+	<view class="con-view">
+		<view class="title">添加标签</view>
+		<view class="input-item">
+			<input class="weui-input" data-name="labelName"  maxlength="20" bindblur="bindInputChange" placeholder="请填写标签名" />
+		</view>
+		<view class="button-row">
+			<view class="button-item" bindtap="showModelFn">
+				取消
+			</view>
+			<view class="button-item qd" bindtap="addTagFn">
+				确定
+			</view>
+		</view>
+	</view>
+</view>
+<view class="title-row">
+	<view class="title-back">
+		<view class="title-back-icon">
+
+		</view>
+		<view>
+			基本信息
+
+		</view>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			客户姓名
+		</view>
+
+	</view>
+	<view class="input-item">
+		<input class="weui-input" data-name="name" value="{{name}}" maxlength="20" bindblur="bindInputChange" placeholder="姓名" />
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>
+			<view class="red-icon">*</view>
+			手机号码
+		</view>
+
+	</view>
+	<view class="input-item">
+		<input class="weui-input" bindblur="bindInputChange" value="{{phone}}" data-name="phone" type="number" maxlength="20"
+			placeholder="手机号码" />
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		性别
+	</view>
+	<view class="input-item">
+		<!-- <radio-group data-list='items' bindchange="radioChange">
+			<view class="radio-row">
+				<label wx:for="{{items}}" wx:key="index">
+					<view class="weui-cell__hd">
+						<radio value="{{item.value}}" checked="true" />
+					</view>
+					<view class="weui-cell__bd">{{item.name}}</view>
+				</label>
+			</view>
+	
+
+		</radio-group> -->
+		<view class="tag-row">
+			<view class="tag-button nan {{gender? 'is':''}}" bindtap="selectGenderFn">
+				<image src="../../../style/iconfont/nan.png"></image>
+				<view>男</view>
+			</view>
+			<view class="tag-button nv  {{!gender? 'is':''}}" bindtap="selectGenderFn">
+				<image src="../../../style/iconfont/nv.png"></image>
+				<view>女</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		生日
+	</view>
+	<view class="input-item">
+		<picker mode="date" value="{{date}}" data-name="date" start="1900-01-01" end="2300-01-01"
+			bindchange="bindInputChange">
+			<view class="picker">
+				{{date}}
+			</view>
+		</picker>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		微信号
+	</view>
+	<view class="input-item">
+		<input class="wx-input" bindblur="bindInputChange" value="{{weChatId}}" data-name="weChatId" type="number" maxlength="20"
+			placeholder="微信号" />
+		<radio-group data-list='itemswx' bindchange="radioChange">
+			<view class="radio-row">
+				<label wx:for="{{itemswx}}" wx:key="index">
+					<view class="weui-cell__hd">
+						<radio value="{{item.value}}" checked="true" />
+					</view>
+					<view class="weui-cell__bd">{{item.name}}</view>
+				</label>
+			</view>
+
+		</radio-group>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		地区
+	</view>
+	<view class="input-item">
+		<picker mode="region" bindchange="bindInputChange" data-name="region" value="{{region}}"
+			custom-item="{{customItem}}">
+			<view class="picker">
+				{{region[0]}}，{{region[1]}}，{{region[2]}}
+			</view>
+		</picker>
+	</view>
+</view>
+<view class="input-row">
+	<view class="label">
+		<view>标签</view>
+		<view class="add-tag" bindtap="showModelFn">添加标签</view>
+	</view>
+	<view class="input-item tag-row">
+		<block wx:for="{{tagArr}}" wx:key="index">
+			<view class="tag-button  {{item.on}}" data-index="{{index}}" bindtap="selectTagFn">
+				<view>{{item.label}}</view>
+			</view>
+		</block>
+
+	</view>
+</view>
+<view class="input-row">
+	<view class="button" bindtap="submitFn">
+		提 交
+	</view>
+</view>

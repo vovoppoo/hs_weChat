@@ -1,0 +1,242 @@
+/* 头部 */
+
+.com-menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.dis {
+  display: none !important;
+}
+
+.com-menu .image-item {
+  background-color: white;
+  padding: 20rpx;
+
+}
+
+.com-menu .image-item .title {
+  text-align: center;
+  width: 100%;
+  padding: 10rpx 0 20rpx;
+}
+
+.com-menu .image-item image {
+  width: 500rpx;
+  height: 500rpx;
+}
+
+.backgroundimg {
+  overflow: hidden;
+}
+
+.backgroundimg image {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.head-box {
+  padding-top: 30rpx;
+  font-size: 24rpx;
+  height: 240rpx;
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.head-item {
+  padding-bottom: 30rpx;
+  position: absolute;
+  width: 100%;
+}
+
+.head-item .head-item-img {
+  display: flex;
+  justify-content: space-between;
+  height: 130rpx;
+}
+
+.head-item-img .user-item-left {
+  margin: 0 30rpx;
+  width: 100%;
+  display: flex;
+  color: white;
+  align-items: center;
+  padding: 20rpx;
+  position: relative;
+}
+
+
+.head-item-img .user-item-left button {
+  color: white;
+  border-color: white;
+}
+
+.head-item-img .user-item-left .item-image {
+  padding-right: 20rpx;
+}
+
+.head-item-img .user-item-left .name {
+  font-size: 44rpx;
+  font-weight: bold;
+}
+
+.head-item-img .user-item-left .value {
+  font-size: 14px;
+}
+
+.head-item-img .user-item-left .label-item {
+  display: flex;
+}
+
+.head-item-img .user-item-left .label {
+  color: #797979;
+  margin-left: 20rrpx;
+  font-size: 28rpx;
+  display: inline-block;
+}
+
+.user-item-left .button-set {
+  position: absolute;
+  right: 0rpx;
+  top: 30rpx;
+}
+
+.user-item-left .button-set image {
+  width: 22px;
+  height: 26px;
+}
+
+.head-item-img .user-item-right {
+  margin-right: 30rpx;
+  background: white;
+  width: 20%;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.head-item-img .user-item-right image {
+  width: 55rpx;
+  height: 55rpx;
+}
+
+.nav-row-view {
+  position: absolute;
+  top: 160rpx;
+  width: 100%;
+}
+
+.nav-row {
+  margin: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 20rpx;
+  border-radius: 15rpx;
+}
+
+.nav-row .nav-item {
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 50%;
+}
+
+
+
+
+.nav-row .nav-item .button-cz {
+  border: 2rpx solid #0DD3B0;
+  padding: 10rpx 0rpx;
+  color: #0DD3B0;
+  border-radius: 36rpx;
+  width: 180rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.nav-row .nav-item .item-number {
+  width: 100%;
+  text-align: center;
+  font-size: 56rpx;
+  padding-top: 20rpx;
+}
+
+.nav-row .nav-item text {
+  font-size: 14px;
+  color: #B9B9B9;
+  padding-top: 10rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.item-name {
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.item-icon {
+  width: 30rpx;
+  margin-right: 20rpx;
+}
+
+
+/*用户菜单*/
+
+.user-menu-view {
+  position: absolute;
+  top: 350rpx;
+  width: 100%;
+
+
+}
+
+.user-menu-view image {
+  width: 52rpx;
+  height: 52rpx;
+  margin-bottom: 8px;
+}
+
+.item-view {
+  margin: 0 30rpx;
+
+}
+
+.item-view .item-row {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.user-menu-view .menu-item {
+  font-size: 30rpx;
+  display: inline-block;
+  background: white;
+  padding: 50rpx 10rpx;
+  width: 210rpx;
+  color: #333333;
+  text-align: center;
+}
+
+.red {
+  color: #FA5151;
+}

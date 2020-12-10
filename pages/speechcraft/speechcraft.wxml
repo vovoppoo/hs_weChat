@@ -1,0 +1,112 @@
+<!--logs.wxml-->
+<wxs module="speechcraft" src="./speechcraft.wxs"></wxs>
+<!-- <view class="mark-view">
+
+</view> -->
+<com-menu show-view="{{showMenu}}" menu-arr="{{menuArr}}" wx:key="index"></com-menu>
+
+<view id="navbar" class='page-navbar'>
+	<view class="menu">
+		<com-navbar to-mode="red" bindclick="navbarClick" confirm-type="search" width="5" nav-width="1" slider-width="130"
+			active-index="{{navbarIndex}}" tabs="{{navlist}}"></com-navbar>
+
+	</view>
+
+	<view class="left-menu">
+		<view class="search">
+			<input class="weui-input" placeholder="搜索话术名称" maxlength="20" bindinput="bindKeyInput" data-label="searchName"
+				confirm-type="search" bindconfirm="getList" />
+		</view>
+	</view>
+
+	<!-- <view id="addButton" class="add-button dis-none" bindtap="{{speechcraft.showMenuFn}}"> -->
+	<view id="addButton" class="add-button dis-none" bindtap="showMenuFn">
+		+
+		<!-- <view class="add-menu">
+			<view catchtap="addItemFn" class="menu-item">
+				新增模板
+			</view>
+			<view catchtap="showCheckedFn" class="menu-item">
+				导入预设模板
+			</view>
+			<view class="icon-menu">▲</view>
+		</view> -->
+	</view>
+
+	<!-- <view class="search-button">
+		<button type="default" plain="true">搜索</button>
+	</view> -->
+
+</view>
+<view class="mode-list">
+	<block wx:if="{{dataList.length>0}}">
+		<block wx:for="{{dataList}}" wx:key="index">
+			<view class="mode-card" catchtap="{{speechcraft.cloCard}}" bindtouchstart="{{speechcraft.touchstart}}"
+				catchtouchend="{{speechcraft.touchend}}">
+				<view class="right-button">
+					<block wx:if="{{item.auditStatus<3}}">
+						<view wx:if="{{formSearch.type==1}}" class="card-button-h" data-id="{{item.id}}" bindtap="goExamineFn">
+							提交审核
+						</view>
+					</block>
+					<block wx:if="{{item.auditStatus>2}}">
+						<view wx:if="{{formSearch.type==1}}" class="card-button-h" style="background-color:#FFFFFF"
+							data-id="{{item.id}}" bindtap="goInfoFn">
+						</view>
+					</block>
+
+					<view wx:if="{{formSearch.type==1}}" class="card-button-r" data-id="{{item.id}}" bindtap="goAddFn">
+						删除
+					</view>
+					<view wx:if="{{formSearch.type==2}}" class="card-button-h" data-id="{{item.id}}" cindtap="addModelFn">
+						加入我的模板
+					</view>
+				</view>
+				<view style="width:100%" data-id="{{item.id}}" data-title="{{item.title}}" data-type="{{item.type}}" bindtap="goInfoFn">
+					<view class="card-info">
+						<view class="info-left">
+							<view class="title">
+								{{item.title}}
+							</view>
+							<view class="time">
+								更新时间：{{item.gmtCreate}}
+							</view>
+						</view>
+						<view class="info-right">
+							<view class="card-button {{item.auditStatus===4?'green':'red' }}">
+								<view class="button-item">
+									<button type="default" plain="true">{{filter.patrolStatus(item.auditStatus)}}</button>
+								</view>
+
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="card-button">
+					<block wx:if="{{showSelect}}">
+						<checkbox value="{{item.id}}" checked="{{item.checked}}" />
+					</block>
+				</view>
+			</view>
+		</block>
+	</block>
+	<block wx:else>
+		<view class="no-con">
+			<view>
+				<view class="icon">
+					<image src="/style/iconfont/tis.png"></image>
+				</view>
+				<view class="tis-row">
+					暂无可用模板。
+				</view>
+				<view class="tis-row">
+					请添加新的模板或导入参考模板
+				</view>
+			</view>
+		</view>
+
+	</block>
+
+</view>
+
+<wxs module="filter" src="./../../filter/filter.wxs"></wxs>

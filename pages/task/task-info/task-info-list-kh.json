@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "客户基本占比详情",
+  "usingComponents": {
+    "com-navbar": "../../../components/com-navbar/index"
+  }
+}
