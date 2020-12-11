@@ -62,6 +62,16 @@ var tsskStatus = function (value) {
   return typeT[value + ''] || '未知类型'
 }
 
+var thStatus = function (value) {
+  var typeT = {
+    '0': '未拨打',
+    '1': '已接通',
+    '2': '未接通',
+    '3': '已拒接',
+  }
+  return typeT[value + ''] || '未知类型'
+}
+
 
 
 //role
@@ -77,5 +87,6 @@ module.exports = {
   dateFormat: dateFormat,
   patrolStatus: patrolStatus,
   roleStatus: roleStatus,
-  tsskStatus: tsskStatus
+  tsskStatus: tsskStatus,
+  thStatus: thStatus
 }

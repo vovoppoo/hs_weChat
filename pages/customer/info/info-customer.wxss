@@ -1,5 +1,8 @@
 /* pages/customer/info/info-customer.wxss */
 
+page {
+  background-color: white;
+}
 
 .menu {
   background-color: #0ED3B0;
@@ -126,41 +129,60 @@
 
 
 .call-view {
-  padding: 20rpx;
+  padding: 20rpx 30rpx 20rpx 64rpx;
 }
 
 .call-view .call-title {
-  border-bottom: 1rpx solid #6A6A6A;
-  padding: 0rpx 0rpx 40rpx;
+  padding: 20rpx 0rpx 30rpx;
+  font-weight: bold;
+  font-size: 36rpx;
 }
 
 .call-view .call-item {
-  padding: 10rpx 0;
-  border-bottom: 1rpx solid #6A6A6A;
+  padding: 20rpx 0;
 }
 
 .call-view .call-item .menu-row {
   display: flex;
   justify-content: space-between;
-
+  padding-bottom: 10rpx;
+  align-items: center;
 }
 
 .call-view .call-item .menu-row .time {
   width: 50%;
-  padding-left: 10rpx;
 }
 
-.call-view .call-item .menu-row .state {
-  width: 36%;
+.call-view .call-item .menu-row .menu-right .state {
+  width:  86rpx;
+  font-size: 26rpx;
 }
 
-.call-view .call-item .menu-row .button {
-  width: 10%;
+.menu-row .menu-right .state.green {
+ color: #07C160;
+}
+
+.menu-row .menu-right .state.red {
+  color: #FA5151;
+ }
+
+
+
+.call-view .call-item .menu-row .menu-right {
+  display: flex;
+  align-items: center;
+}
+
+.call-view .call-item .menu-row .button image {
+  width: 48rpx;
+  height: 26rpx;
 }
 
 .call-view .call-item .con-view {
-  padding: 30rpx 20rpx 0rpx;
+  padding: 20rpx 20rpx 10rpx;
   font-size: 28rpx;
+  border-top: 1rpx solid #F6F6F6;
+  border-bottom: 1rpx solid #F6F6F6;
 }
 
 

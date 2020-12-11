@@ -2,7 +2,7 @@
 <view class="main-page">
 	<view class="login-view">
 		<view class="logo-row">
-			<image src="/style/iconfont/logo.png"></image>
+			<image src="/style/iconfont/logo_@2x.png"></image>
 		</view>
 		<!-- <view class="title-row">
 			登录

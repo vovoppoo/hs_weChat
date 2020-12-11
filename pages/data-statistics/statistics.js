@@ -174,11 +174,12 @@ Page({
       // onInit: initChart,
     },
     ecCircular: {
-      onInit: initCircularChart
+      // onInit: initCircularChart
+      lazyLoad: true
     },
     array: [{ name: '全部任务', value: 0 }, { name: '宝安常青藤公寓任务', value: 1 }, { name: '南山阳光海景豪庭任务', value: 2 }, { name: '南山海滨之窗花园任务', value: 2 }, { name: '福田郁金花园二期任务', value: 3 }],
     navbarIndex: 0,
-    index:0,
+    index: 0,
     navlist: [{
       text: '周',
       val: 1,
@@ -197,6 +198,7 @@ Page({
     this.setData({
       logs: [1, 2, 3]
     })
+    this.barComponent = this.selectComponent('#mychart-dom-circular');
   },
   onReady() {
     setTimeout(function () {
@@ -217,6 +219,7 @@ Page({
         onInit: initChart,
       },
     })
+    this.getList()
   },
   onShareAppMessage: function (res) {
     return {
@@ -232,7 +235,71 @@ Page({
       index: e.detail.value
     })
   },
+
+  getBarOption(dataArr) {
+    console.log(dataArr, 'dataArr')
+    //return 请求数据
+    return {
+      title: {
+        text: '',
+      },
+      backgroundColor: "#ffffff",
+      color: ["#37A2DA", "#32C5E9", "#67E0E3", "#71F2DE", "#99F2DE", "#FFDB5C"],
+      series: [{
+        label: {
+          normal: {
+            fontSize: 14
+          }
+        },
+        type: 'pie',
+        center: ['50%', '50%'],
+        radius: ['40%', '60%'],
+        data: dataArr
+      }]
+    };
+  },
+  init_bar: function (arr) {
+    this.barComponent.init((canvas, width, height) => {
+      // 初始化图表
+      const barChart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      console.log(this.getBarOption(arr), '1')
+      barChart.setOption(this.getBarOption(arr));
+      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
+      return barChart;
+    });
+  },
+  toPoint(percent) {
+    var str = percent.replace("%", "");
+    str = str / 100;
+    return str;
+  },
   getList(page) {
+    let data = [{
+      value: 55,
+      name: 'A级(35%)'
+    }, {
+      value: 20,
+      name: 'B级(15%)'
+    }, {
+      value: 10,
+      name: 'C级(7%)'
+    }, {
+      value: `20`,
+      name: 'D级(15%)'
+    }, {
+      value: `38`,
+      name: 'F级(28%)'
+    }]
+    // let { userLevel } = data
+    // userLevel.map(item => {
+    //   item.value = data.userCount * (this.toPoint(item.value))
+    //   item.name = `${item.name}(${item.value})`
+    // })
+    this.init_bar(data);
+    return
     let signUserName = wx.getStorageSync('signUserName')
     const navMap = {
       1: 0,
@@ -254,6 +321,7 @@ Page({
         data: param,
         s: (res) => {
           if (res.code === 0) {
+
             let data = res.response.datas
             this.setData({
               taskData: data

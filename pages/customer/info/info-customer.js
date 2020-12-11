@@ -25,7 +25,7 @@ Page({
     formSearch: {},
     pageItem: {},
     dataList2: [],
-    dataList3: [{ id: 1, display: 'display-none' }, { id: 2, display: 'display-none' }, { id: 3, display: 'display-none' }, { id: 4, display: 'display-none' }, { id: 1, display: 'display-none' },],
+    dataList3: [{ id: 1,state:1 , display: 'display-none' }, { id: 2,state:2 ,  display: 'display-none' }, { id: 3, state:3 , display: 'display-none' }, { id: 4, state:2 , display: 'display-none' }, { id: 1,state:3 ,  display: 'display-none' },],
     dataList: ['张三', '13195271314', 'B', '外来户', '老板介绍', '2020-8-20', '20', '20', '男', '33', '1987-10-20', 'vip3987711', '广东省深圳市'],
     labelList: ['客户姓名', '手机号码', '客户类型', '客户标签', '客户来源', '最后跟进', '任务数', '通话次数', '性别', '年龄', '生日', '微信', '地区'],
   },

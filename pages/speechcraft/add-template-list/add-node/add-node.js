@@ -168,14 +168,15 @@ Page({
     var data = {
       multiArray: this.data.multiArray,
     };
+    let tzType = this.data[name];
     if (!index && index != 0) {
       data[valuearr] = this.data[valuearr]
     } else {
       data[valuearr] = FZTZArr[index][valuearr]
+      tzType = FZTZArr[index][tzTypeFZ]
     }
     console.log(data[valuearr], 'data[valuearr]')
     let { objmultiArray } = this.data
-    let tzType = 1;
     data[valuearr][e.detail.column] = e.detail.value;
     switch (e.detail.column) {
       case 0:
@@ -200,25 +201,21 @@ Page({
         data[valuearr][1] = 0;
         break;
     }
-    console.log(data[valuearr]);
     if (!index && index != 0) {
       data[name] = tzType
     } else {
       FZTZArr[index][name] = tzType
     }
-
-
     this.setData(data);
-    console.log(this.data, 'data');
   },
   bindPickerChange(e) {//单选择器
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
   },
   switchChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     let { name } = e.currentTarget.dataset
     let obj = {}
     obj[name] = e.detail.value
@@ -244,13 +241,9 @@ Page({
   },
 
   startAudioFn() {
-    console.log('执行了？？')
     this.setData({
       showAudioStop: true
     })
-
-
-
     const options = {
       duration: 70000,//指定录音的时长，单位 ms
       sampleRate: 16000,//采样率
@@ -1039,7 +1032,7 @@ Page({
         if (res.code === 0) {
 
           let { id } = this.data
-     
+
 
           wx.navigateBack({
             delta: 1,

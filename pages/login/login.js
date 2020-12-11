@@ -83,6 +83,15 @@ Page({
     let { iv, encryptedData } = e.detail
     let { sessionKey } = this.data
     if (e.detail.errMsg === 'getPhoneNumber:ok') {
+      // wx.checkSession({
+      //   success () {
+      //     //session_key 未过期，并且在本生命周期一直有效
+      //   },
+      //   fail () {
+      //     // session_key 已经失效，需要重新执行登录流程
+      //     wx.login() //重新登录
+      //   }
+      // })
       let apiText = 'goLogin'
       let param = {
         "platform": "weChatLogin",       //weChatLogin:微信一键登录

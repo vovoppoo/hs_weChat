@@ -107,16 +107,19 @@
 	<block wx:for="{{dataList3}}" wx:key="index">
 		<view class="call-item">
 			<view class="menu-row">
-				<view class="time">2020-7-20</view>
-				<view class="state">已接通</view>
-				<view class="button" data-display="{{item.display}}" data-index="{{index}}" bindtap="changeMeunFn">
-					<view wx:if="{{item.display==''}}">
-						﹀
-					</view>
-					<view wx:else>
-						︿
+				<view class="time">2020-7-20 20:20:20</view>
+				<view class="menu-right">
+					<view class="state {{item.state==1?'green':'red'}}">{{filter.thStatus(item.state)}}</view>
+					<view class="button" data-display="{{item.display}}" data-index="{{index}}" bindtap="changeMeunFn">
+						<view wx:if="{{item.display==''}}">
+							<image src="/style/iconfont/downJT.png"></image>
+						</view>
+						<view wx:else>
+							<image src="/style/iconfont/upJT.png"></image>
+						</view>
 					</view>
 				</view>
+
 			</view>
 			<view class="con-view {{item.display}}">
 				<view class="con-row">
