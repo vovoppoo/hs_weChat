@@ -57,7 +57,7 @@
 		<view class="title">任务数据</view>
 		<ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 	</view>
-	<view class="container tb circular" style="top:{{height+320}}px">
+	<view class="container tb circular" style="top:{{height+350}}px">
 		<view class="title">客户占比</view>
 		<ec-canvas id="mychart-dom-circular" canvas-id="mychart-circular" ec="{{ ecCircular }}"></ec-canvas>
 	</view>
